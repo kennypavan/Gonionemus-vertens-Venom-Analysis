@@ -1,1 +1,2 @@
-# Gonionemus vertens Venom Analysis
+# Gonionemus vertens
+Venomics and transcriptome analysis pipeline and corresponding data. 
