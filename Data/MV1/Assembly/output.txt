@@ -1,220 +1,0 @@
-
-
-     ______  ____   ____  ____   ____  ______  __ __
-    |      ||    \ |    ||    \ |    ||      ||  |  |
-    |      ||  D  ) |  | |  _  | |  | |      ||  |  |
-    |_|  |_||    /  |  | |  |  | |  | |_|  |_||  ~  |
-      |  |  |    \  |  | |  |  | |  |   |  |  |___, |
-      |  |  |  .  \ |  | |  |  | |  |   |  |  |     |
-      |__|  |__|\_||____||__|__||____|  |__|  |____/
-
-    Trinity-v2.12.0
-
-
-
-Left read files: $VAR1 = [
-          '/home/aDnaToolDroplet/MARTVIN1_S1_L001_R1_001.fastq.gz'
-        ];
-Right read files: $VAR1 = [
-          '/home/aDnaToolDroplet/MARTVIN1_S1_L001_R2_001.fastq.gz'
-        ];
-Trinity version: Trinity-v2.12.0
-** NOTE: Latest version of Trinity is Trinity-v2.13.2, and can be obtained at:
-	https://github.com/trinityrnaseq/trinityrnaseq/releases
-
-Friday, September 17, 2021: 19:12:08	CMD: java -Xmx64m -XX:ParallelGCThreads=2  -jar /usr/local/bin/util/support_scripts/ExitTester.jar 0
-Friday, September 17, 2021: 19:12:08	CMD: java -Xmx4g -XX:ParallelGCThreads=2  -jar /usr/local/bin/util/support_scripts/ExitTester.jar 1
-Friday, September 17, 2021: 19:12:08	CMD: mkdir -p /home/aDnaToolDroplet/trinity_out_dir
-Friday, September 17, 2021: 19:12:08	CMD: mkdir -p /home/aDnaToolDroplet/trinity_out_dir/chrysalis
-STARTING COLLECTL
-I'M THE PARENT, COLLECTL_PID=70
-I'M THE CHILD RUNNING TRINITY
-Running CMD: bash -c "set -eou pipefail && cd /usr/local/src/collectl && exec nohup /usr/local/bin/trinity-plugins/COLLECTL/collectl/collectl --procopts w  --procfilt u0 --interval :60 -sZ -oD | egrep 'Trinity|trinityrnaseq|Inchworm|Chrysalis|Butterfly|jellyfish|samtools|sort|bowtie' | egrep -v 'egrep' > /usr/local/src/collectl/collectl.dat " 
-
-
-----------------------------------------------------------------------------------
--------------- Trinity Phase 1: Clustering of RNA-Seq Reads  ---------------------
-----------------------------------------------------------------------------------
-
----------------------------------------------------------------
------- Quality Trimming Via Trimmomatic  ---------------------
-<< ILLUMINACLIP:/usr/local/bin/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25 >>
----------------------------------------------------------------
-
-
-## Running Trimmomatic on read files: /home/aDnaToolDroplet/MARTVIN1_S1_L001_R1_001.fastq.gz, /home/aDnaToolDroplet/MARTVIN1_S1_L001_R2_001.fastq.gz
-Friday, September 17, 2021: 19:12:08	CMD: java  -jar /usr/local/bin/trinity-plugins/Trimmomatic/trimmomatic.jar PE -threads 32  /home/aDnaToolDroplet/MARTVIN1_S1_L001_R1_001.fastq.gz /home/aDnaToolDroplet/MARTVIN1_S1_L001_R2_001.fastq.gz  MARTVIN1_S1_L001_R1_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R1_001.fastq.gz.U.qtrim  MARTVIN1_S1_L001_R2_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R2_001.fastq.gz.U.qtrim  ILLUMINACLIP:/usr/local/bin/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25 
-TrimmomaticPE: Started with arguments:
- -threads 32 /home/aDnaToolDroplet/MARTVIN1_S1_L001_R1_001.fastq.gz /home/aDnaToolDroplet/MARTVIN1_S1_L001_R2_001.fastq.gz MARTVIN1_S1_L001_R1_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R1_001.fastq.gz.U.qtrim MARTVIN1_S1_L001_R2_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R2_001.fastq.gz.U.qtrim ILLUMINACLIP:/usr/local/bin/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25
-Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
-ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
-Quality encoding detected as phred33
-Use of uninitialized value $strace in pattern match (m//) at /usr/local/bin/trinity-plugins/COLLECTL/collectl-4.1.0/formatit.ph line 178.
-Use of uninitialized value $speed in numeric gt (>) at /usr/local/bin/trinity-plugins/COLLECTL/collectl-4.1.0/formatit.ph line 181.
-Input Read Pairs: 3686369 Both Surviving: 3523197 (95.57%) Forward Only Surviving: 154139 (4.18%) Reverse Only Surviving: 138 (0.00%) Dropped: 8895 (0.24%)
-TrimmomaticPE: Completed successfully
-Friday, September 17, 2021: 19:12:23	CMD: cp MARTVIN1_S1_L001_R1_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq
-Friday, September 17, 2021: 19:12:24	CMD: cp MARTVIN1_S1_L001_R2_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq
-Friday, September 17, 2021: 19:12:25	CMD: touch trimmomatic.ok
-Friday, September 17, 2021: 19:12:25	CMD: gzip MARTVIN1_S1_L001_R1_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R1_001.fastq.gz.U.qtrim MARTVIN1_S1_L001_R2_001.fastq.gz.P.qtrim MARTVIN1_S1_L001_R2_001.fastq.gz.U.qtrim &
----------------------------------------------------------------
------------- In silico Read Normalization ---------------------
--- (Removing Excess Reads Beyond 200 Coverage --
----------------------------------------------------------------
-
-# running normalization on reads: $VAR1 = [
-          [
-            'MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq'
-          ],
-          [
-            'MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq'
-          ]
-        ];
-
-
-Friday, September 17, 2021: 19:12:25	CMD: /usr/local/bin/util/insilico_read_normalization.pl --seqType fq --JM 63G  --max_cov 200 --min_cov 1 --CPU 32 --output /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization --max_CV 10000  --left MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq --right MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq --pairs_together  --PARALLEL_STATS  
--prepping seqs
-Converting input files. (both directions in parallel)CMD: seqtk-trinity seq -A -R 1  /home/aDnaToolDroplet/trinity_out_dir/MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq >> left.fa
-CMD: seqtk-trinity seq -A -R 2  /home/aDnaToolDroplet/trinity_out_dir/MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq >> right.fa
-CMD finished (4 seconds)
-CMD finished (4 seconds)
-CMD: touch left.fa.ok
-CMD finished (0 seconds)
-CMD: touch right.fa.ok
-CMD finished (0 seconds)
-Done converting input files.CMD: cat left.fa right.fa > both.fa
-CMD finished (3 seconds)
-CMD: touch both.fa.ok
-CMD finished (0 seconds)
--kmer counting.
--------------------------------------------
------------ Jellyfish  --------------------
--- (building a k-mer catalog from reads) --
--------------------------------------------
-
-CMD: jellyfish count -t 32 -m 25 -s 100000000  --canonical  both.fa
-CMD finished (29 seconds)
-CMD: jellyfish histo -t 32 -o jellyfish.K25.min2.kmers.fa.histo mer_counts.jf
-CMD finished (6 seconds)
-CMD: jellyfish dump -L 2 mer_counts.jf > jellyfish.K25.min2.kmers.fa
-CMD finished (20 seconds)
-CMD: touch jellyfish.K25.min2.kmers.fa.success
-CMD finished (0 seconds)
--generating stats files
-CMD: /usr/local/bin/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads left.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 16  --DS  > left.fa.K25.stats
-CMD: /usr/local/bin/util/..//Inchworm/bin/fastaToKmerCoverageStats --reads right.fa --kmers jellyfish.K25.min2.kmers.fa --kmer_size 25  --num_threads 16  --DS  > right.fa.K25.stats
--reading Kmer occurrences...
--reading Kmer occurrences...
-
- done parsing 51496863 Kmers, 51496863 added, taking 65 seconds.
-
- done parsing 51496863 Kmers, 51496863 added, taking 66 seconds.
-STATS_GENERATION_TIME: 54 seconds.
-STATS_GENERATION_TIME: 54 seconds.
-CMD finished (130 seconds)
-CMD finished (130 seconds)
-CMD: touch left.fa.K25.stats.ok
-CMD finished (0 seconds)
-CMD: touch right.fa.K25.stats.ok
-CMD finished (0 seconds)
--sorting each stats file by read name.
-CMD: head -n1 left.fa.K25.stats > left.fa.K25.stats.sort && tail -n +2 left.fa.K25.stats | /usr/bin/sort --parallel=32 -k1,1 -T . -S 31G >> left.fa.K25.stats.sort
-CMD: head -n1 right.fa.K25.stats > right.fa.K25.stats.sort && tail -n +2 right.fa.K25.stats | /usr/bin/sort --parallel=32 -k1,1 -T . -S 31G >> right.fa.K25.stats.sort
-CMD finished (2 seconds)
-CMD finished (2 seconds)
-CMD: touch left.fa.K25.stats.sort.ok
-CMD finished (0 seconds)
-CMD: touch right.fa.K25.stats.sort.ok
-CMD finished (0 seconds)
--defining normalized reads
-CMD: /usr/local/bin/util/..//util/support_scripts//nbkc_merge_left_right_stats.pl --left left.fa.K25.stats.sort --right right.fa.K25.stats.sort --sorted > pairs.K25.stats
--opening left.fa.K25.stats.sort
--opening right.fa.K25.stats.sort
--done opening files.
-CMD finished (39 seconds)
-CMD: touch pairs.K25.stats.ok
-CMD finished (0 seconds)
-CMD: /usr/local/bin/util/..//util/support_scripts//nbkc_normalize.pl --stats_file pairs.K25.stats --max_cov 200  --min_cov 1 --max_CV 10000 > pairs.K25.stats.C200.maxCV10000.accs
-2109065 / 3523197 = 59.86% reads selected during normalization.
-0 / 3523197 = 0.00% reads discarded as likely aberrant based on coverage profiles.
-0 / 3523197 = 0.00% reads discarded as below minimum coverage threshold=1
-CMD finished (26 seconds)
-CMD: touch pairs.K25.stats.C200.maxCV10000.accs.ok
-CMD finished (0 seconds)
--search and capture.
--preparing to extract selected reads from: /home/aDnaToolDroplet/trinity_out_dir/MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq ... done prepping, now search and capture.
--capturing normalized reads from: /home/aDnaToolDroplet/trinity_out_dir/MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq
--preparing to extract selected reads from: /home/aDnaToolDroplet/trinity_out_dir/MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq ... done prepping, now search and capture.
--capturing normalized reads from: /home/aDnaToolDroplet/trinity_out_dir/MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq
-CMD: touch /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq.normalized_K25_maxC200_minC1_maxCV10000.fq.ok
-CMD finished (0 seconds)
-CMD: touch /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq.normalized_K25_maxC200_minC1_maxCV10000.fq.ok
-CMD finished (0 seconds)
-CMD: ln -sf /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq.normalized_K25_maxC200_minC1_maxCV10000.fq left.norm.fq
-CMD finished (0 seconds)
-CMD: ln -sf /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq.normalized_K25_maxC200_minC1_maxCV10000.fq right.norm.fq
-CMD finished (0 seconds)
--removing tmp dir /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/tmp_normalized_reads
-
-
-Normalization complete. See outputs: 
-	/home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/MARTVIN1_S1_L001_R1_001.fastq.gz.PwU.qtrim.fq.normalized_K25_maxC200_minC1_maxCV10000.fq
-	/home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/MARTVIN1_S1_L001_R2_001.fastq.gz.PwU.qtrim.fq.normalized_K25_maxC200_minC1_maxCV10000.fq
-Friday, September 17, 2021: 19:17:24	CMD: touch /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/normalization.ok
-Converting input files. (in parallel)Friday, September 17, 2021: 19:17:24	CMD: cat /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/left.norm.fq | seqtk-trinity seq -A -R 1 - >> left.fa
-Friday, September 17, 2021: 19:17:24	CMD: cat /home/aDnaToolDroplet/trinity_out_dir/insilico_read_normalization/right.norm.fq | seqtk-trinity seq -A -R 2 - >> right.fa
-Friday, September 17, 2021: 19:17:26	CMD: touch right.fa.ok
-Friday, September 17, 2021: 19:17:26	CMD: touch left.fa.ok
-Friday, September 17, 2021: 19:17:27	CMD: touch left.fa.ok right.fa.ok
-Friday, September 17, 2021: 19:17:27	CMD: cat left.fa right.fa > /home/aDnaToolDroplet/trinity_out_dir/both.fa
-Friday, September 17, 2021: 19:17:27	CMD: touch /home/aDnaToolDroplet/trinity_out_dir/both.fa.ok
--------------------------------------------
------------ Jellyfish  --------------------
--- (building a k-mer (25) catalog from reads) --
--------------------------------------------
-
-* [Fri Sep 17 19:17:28 2021] Running CMD: jellyfish count -t 32 -m 25 -s 100000000 -o mer_counts.25.asm.jf --canonical  /home/aDnaToolDroplet/trinity_out_dir/both.fa
-* [Fri Sep 17 19:17:50 2021] Running CMD: jellyfish dump -L 1 mer_counts.25.asm.jf > jellyfish.kmers.25.asm.fa
-* [Fri Sep 17 19:18:23 2021] Running CMD: jellyfish histo -t 32 -o jellyfish.kmers.25.asm.fa.histo mer_counts.25.asm.jf
-----------------------------------------------
---------------- Inchworm (K=25, asm) ---------------------
--- (Linear contig construction from k-mers) --
-----------------------------------------------
-
-* [Fri Sep 17 19:18:28 2021] Running CMD: /usr/local/bin/Inchworm/bin//inchworm --kmers jellyfish.kmers.25.asm.fa --run_inchworm -K 25 --monitor 1   --DS  --num_threads 6  --PARALLEL_IWORM   --min_any_entropy 1.0   -L 25  --no_prune_error_kmers  > /home/aDnaToolDroplet/trinity_out_dir/inchworm.DS.fa.tmp
-Kmer length set to: 25
-Min assembly length set to: 25
-Monitor turned on, set to: 1
-double stranded mode set
-min entropy set to: 1
-setting number of threads to: 6
--setting parallel iworm mode.
--reading Kmer occurrences...
- [0M] Kmers parsed.      [1M] Kmers parsed.      [1M] Kmers parsed.      [2M] Kmers parsed.      [3M] Kmers parsed.      [3M] Kmers parsed.      [4M] Kmers parsed.      [5M] Kmers parsed.      [5M] Kmers parsed.      [6M] Kmers parsed.      [7M] Kmers parsed.      [7M] Kmers parsed.      [8M] Kmers parsed.      [8M] Kmers parsed.      [9M] Kmers parsed.      [10M] Kmers parsed.      [10M] Kmers parsed.      [11M] Kmers parsed.      [12M] Kmers parsed.      [12M] Kmers parsed.      [13M] Kmers parsed.      [14M] Kmers parsed.      [14M] Kmers parsed.      [15M] Kmers parsed.      [15M] Kmers parsed.      [16M] Kmers parsed.      [17M] Kmers parsed.      [17M] Kmers parsed.      [18M] Kmers parsed.      [19M] Kmers parsed.      [19M] Kmers parsed.      [20M] Kmers parsed.      [21M] Kmers parsed.      [21M] Kmers parsed.      [22M] Kmers parsed.      [22M] Kmers parsed.      [23M] Kmers parsed.      [24M] Kmers parsed.      [24M] Kmers parsed.      [25M] Kmers parsed.      [26M] Kmers parsed.      [26M] Kmers parsed.      [27M] Kmers parsed.      [28M] Kmers parsed.      [28M] Kmers parsed.      [29M] Kmers parsed.      [29M] Kmers parsed.      [30M] Kmers parsed.      [31M] Kmers parsed.      [31M] Kmers parsed.      [32M] Kmers parsed.      [33M] Kmers parsed.      [33M] Kmers parsed.      [34M] Kmers parsed.      [35M] Kmers parsed.      [35M] Kmers parsed.      [36M] Kmers parsed.      [37M] Kmers parsed.      [37M] Kmers parsed.      [38M] Kmers parsed.      [38M] Kmers parsed.      [39M] Kmers parsed.      [40M] Kmers parsed.      [40M] Kmers parsed.      [41M] Kmers parsed.      [42M] Kmers parsed.      [42M] Kmers parsed.      [43M] Kmers parsed.      [44M] Kmers parsed.      [44M] Kmers parsed.      [45M] Kmers parsed.      [45M] Kmers parsed.      [46M] Kmers parsed.      [47M] Kmers parsed.      [47M] Kmers parsed.      [48M] Kmers parsed.      [49M] Kmers parsed.      [49M] Kmers parsed.      [50M] Kmers parsed.      [51M] Kmers parsed.      [51M] Kmers parsed.      [52M] Kmers parsed.      [52M] Kmers parsed.      [53M] Kmers parsed.      [54M] Kmers parsed.      [54M] Kmers parsed.      [55M] Kmers parsed.      [56M] Kmers parsed.      [56M] Kmers parsed.      [57M] Kmers parsed.      [57M] Kmers parsed.      [58M] Kmers parsed.      [59M] Kmers parsed.      [59M] Kmers parsed.      [60M] Kmers parsed.      [61M] Kmers parsed.      [61M] Kmers parsed.      [62M] Kmers parsed.      [63M] Kmers parsed.      [63M] Kmers parsed.      [64M] Kmers parsed.      [65M] Kmers parsed.      [65M] Kmers parsed.      [66M] Kmers parsed.      [66M] Kmers parsed.      [67M] Kmers parsed.      [68M] Kmers parsed.      [68M] Kmers parsed.      [69M] Kmers parsed.      [70M] Kmers parsed.      [70M] Kmers parsed.      [71M] Kmers parsed.      [72M] Kmers parsed.      [72M] Kmers parsed.      [73M] Kmers parsed.      [73M] Kmers parsed.      [74M] Kmers parsed.      [75M] Kmers parsed.      [75M] Kmers parsed.      [76M] Kmers parsed.      [77M] Kmers parsed.      [77M] Kmers parsed.      [78M] Kmers parsed.      [79M] Kmers parsed.      [79M] Kmers parsed.      [80M] Kmers parsed.      [81M] Kmers parsed.      [81M] Kmers parsed.      [82M] Kmers parsed.      [82M] Kmers parsed.      [83M] Kmers parsed.      [84M] Kmers parsed.      [84M] Kmers parsed.      [85M] Kmers parsed.      [86M] Kmers parsed.      [86M] Kmers parsed.      [87M] Kmers parsed.      [87M] Kmers parsed.      [88M] Kmers parsed.      [89M] Kmers parsed.      [89M] Kmers parsed.      [90M] Kmers parsed.      [91M] Kmers parsed.      [91M] Kmers parsed.      [92M] Kmers parsed.      [92M] Kmers parsed.      [93M] Kmers parsed.      [94M] Kmers parsed.      [94M] Kmers parsed.      [95M] Kmers parsed.      [96M] Kmers parsed.      [96M] Kmers parsed.      [97M] Kmers parsed.      [97M] Kmers parsed.      [98M] Kmers parsed.      [99M] Kmers parsed.      [99M] Kmers parsed.      [100M] Kmers parsed.      [101M] Kmers parsed.      [101M] Kmers parsed.      [102M] Kmers parsed.      [102M] Kmers parsed.      [103M] Kmers parsed.      [104M] Kmers parsed.      [104M] Kmers parsed.     
- done parsing 105350398 Kmers, 105350398 added, taking 132 seconds.
-
-TIMING KMER_DB_BUILDING 132 s.
-Pruning kmers (min_kmer_count=1 min_any_entropy=1 min_ratio_non_error=0.005)
-Pruned 1475888 kmers from catalog.
-	Pruning time: 33 seconds = 0.55 minutes.
-
-TIMING PRUNING 33 s.
--populating the kmer seed candidate list.
-Kcounter hash size: 105350398
-Processed 103874510 non-zero abundance kmers in kcounter.
--Not sorting list of kmers, given parallel mode in effect.
--beginning inchworm contig assembly.
-Total kcounter hash size: 105350398 vs. sorted list size: 103874510
-num threads set to: 6
-Done opening file. tmp.iworm.fa.pid_508.thread_0
-Done opening file. tmp.iworm.fa.pid_508.thread_1
-Done opening file. tmp.iworm.fa.pid_508.thread_2
-Done opening file. tmp.iworm.fa.pid_508.thread_3
-Done opening file. tmp.iworm.fa.pid_508.thread_4
-Done opening file. tmp.iworm.fa.pid_508.thread_5
-
-	Iworm contig assembly time: 68 seconds = 1.13333 minutes.
-
-TIMING CONTIG_BUILDING 68 s.
-
-TIMING PROG_RUNTIME 257 s.
