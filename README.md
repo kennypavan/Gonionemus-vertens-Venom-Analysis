@@ -12,3 +12,9 @@ Mi-Seq raw fq paired data can be downloaded from the following links. Two distin
 
 ## Analysis Reproduction Steps
 This results of this analysis are reproducible by following the steps below. <br><br>
+
+
+1. Install the project prerequisite dependencies Docker, Fastqc, and Python3. 
+
+
+2. Download raw data Mi-Seq data files.
