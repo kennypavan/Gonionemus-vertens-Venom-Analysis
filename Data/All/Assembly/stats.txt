@@ -1,0 +1,40 @@
+
+
+################################
+## Counts of transcripts, etc.
+################################
+Total trinity 'genes':	154724
+Total trinity transcripts:	235191
+Percent GC: 41.79
+
+########################################
+Stats based on ALL transcript contigs:
+########################################
+
+	Contig N10: 4861
+	Contig N20: 3271
+	Contig N30: 2432
+	Contig N40: 1865
+	Contig N50: 1430
+
+	Median contig length: 425
+	Average contig: 808.46
+	Total assembled bases: 190142601
+
+
+#####################################################
+## Stats based on ONLY LONGEST ISOFORM per 'GENE':
+#####################################################
+
+	Contig N10: 4361
+	Contig N20: 2744
+	Contig N30: 1920
+	Contig N40: 1315
+	Contig N50: 828
+
+	Median contig length: 341
+	Average contig: 599.25
+	Total assembled bases: 92718571
+
+
+
