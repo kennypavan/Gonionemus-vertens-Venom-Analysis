@@ -7,3 +7,7 @@ Mi-Seq raw fq paired data can be downloaded from the following links. Two distin
 <a href="http://gaynorlab.com/cq/gv/MV-ALL-R1.fastq.gz" target="_blank">Forward</a>
 
 <a href="http://gaynorlab.com/cq/gv/MV-ALL-R2.fastq.gz" target="_blank">Reverse</a>
+
+
+## Analysis Reproduction Steps
+This results of this analysis are reproducible by following the steps below. <br><br>
