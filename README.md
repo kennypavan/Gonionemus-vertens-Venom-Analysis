@@ -69,8 +69,16 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 
 	10a. Add TPM expression values to results file using MergeBlastTPM python script.
-	
+
 	10b. Annotate the results
 
 
-11. Filter based on expression values
+11. Filter based on expression values using awk. TPM >= 1
+	
+	```
+	#list
+	awk '{ if ($13 >= 1) { print } }' FS='\t' diamond-toxin-out-with-tpm.txt
+	
+	#count
+	awk '{ if ($13 >= 1) { print } }' FS='\t' diamond-toxin-out-with-tpm.txt | wc -l
+	```
