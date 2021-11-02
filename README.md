@@ -61,6 +61,7 @@ The results of this analysis are reproducible by following the steps below. <br>
  
 
 	9a. Add TPM expression values to results file using MergeBlastTPM python script.
+
 	9b. Annotate the results 
 
 
@@ -68,6 +69,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 
 	10a. Add TPM expression values to results file using MergeBlastTPM python script.
+	
 	10b. Annotate the results
 
 
