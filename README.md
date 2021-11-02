@@ -60,13 +60,15 @@ The results of this analysis are reproducible by following the steps below. <br>
 9. Perform BLASTx via Diamond against the NR database.
  
 
-	9a. Annotate the results 
+	9a. Add TPM expression values to results file using MergeBlastTPM python script.
+	9b. Annotate the results 
 
 
 10. Perform BLASTx via Diamond against the Uniprot Toxin and Venom Database. 
 
 
-	10a. Annotate the results
+	10a. Add TPM expression values to results file using MergeBlastTPM python script.
+	10b. Annotate the results
 
 
 11. Filter based on expression values
