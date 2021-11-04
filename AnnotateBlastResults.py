@@ -3,6 +3,9 @@ import csv
 import time
 import urllib.parse
 import urllib.request
+import requests
+import sys
+import json
 
 #maps embl to uniprot and saves
 def MapIDs():
@@ -67,16 +70,31 @@ def MapIDs():
 	file.close()
 
 
+def annotationSearch(productID):
+	
+	searchUrl = 'https://www.ebi.ac.uk/QuickGO/services/annotation/search?limit=100&includeFields=goName&includeFields=taxonName&includeFields=name&geneProductId='+productID
+	response = requests.get(searchUrl, headers={ "Accept" : "application/json"})
 
-def annotationSearch(filePath):
-	
-	searchUrl = 'https://www.uniprot.org/uploadlists/'
-	file = open(filePath,'r')
-	lines = csv.reader(file, delimiter='\t')
-	
-	for line in lines:
-		qid = line[1]
+	if response.ok:
+		responseBody = json.loads(response.text)
+		for result in responseBody["results"]:
+			print(result["symbol"]+": \n\t"+result["goName"]+" \n\t"+ result["goId"]+" \n\t"+ result["goAspect"]+" \n\t"+ result["taxonName"]+" \n\t"+ result["name"]+" \n\t"+ result["assignedBy"])
+
+
+def annotateToxins():
+	return None
+
+
+def annotateTranscriptome():
+	return None
+
+
+
 
 
 if __name__ == '__main__':
-	MapIDs() #takes ~30 seconds for every 5000 blast hits.
+
+	#~30 seconds for every 5000 blast hits. Uncomment to run
+	# MapIDs() 
+
+	annotationSearch("Q75WF2")
