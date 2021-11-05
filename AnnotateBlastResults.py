@@ -70,25 +70,50 @@ def MapIDs():
 	file.close()
 
 
-def annotationSearch(productID):
+def annotationSearch(productID,transcriptID):
 	
 	searchUrl = 'https://www.ebi.ac.uk/QuickGO/services/annotation/search?limit=100&includeFields=goName&includeFields=taxonName&includeFields=name&geneProductId='+productID
 	response = requests.get(searchUrl, headers={ "Accept" : "application/json"})
+	fullResponse="";
 
 	if response.ok:
 		responseBody = json.loads(response.text)
 		for result in responseBody["results"]:
-			print(result["symbol"]+": \n\t"+result["goName"]+" \n\t"+ result["goId"]+" \n\t"+ result["goAspect"]+" \n\t"+ result["taxonName"]+" \n\t"+ result["name"]+" \n\t"+ result["assignedBy"])
+			fullResponse += transcriptID+"\t"+result["symbol"]+"\t"+result["goName"]+"\t"+ result["goId"]+"\t"+ result["goAspect"]+"\t"+ result["taxonName"]+"\t"+ result["name"]+"\t"+ result["assignedBy"]+"\n"
 
+	return fullResponse
 
 def annotateToxins():
-	return None
+	file = open("Data/All/BLASTx_ToxinProt/diamond-toxin-out-with-tpm.txt",'r')
+	lines = csv.reader(file, delimiter='\t')
+	
+	annotationFile = open("Data/All/BLASTx_ToxinProt/toxin-annotations.txt", "a")  # append mode
+	go = 0 
+
+	for line in lines:
+		if line[0] == "TRINITY_DN3288_c1_g1_i6":
+			go = 1
+		
+		if go == 1:
+			annotationFile.write(annotationSearch(line[1].split('|')[1],line[0]))
+			print(line[0]+":"+str(go))
+
+	annotationFile.close()
+	print("done")
 
 
 def annotateTranscriptome():
-	return None
+	file = open("Data/All/BLASTx_NR/diamond-out-with-tpm.txt",'r')
+	lines = csv.reader(file, delimiter='\t')
+	
+	annotationFile = open("Data/All/BLASTx_NR/NR-annotations.txt", "a")  # append mode
 
+	#only annotate with TPM >=1
+	for line in lines:
+		annotationFile.write(annotationSearch(line[1].split('|')[1],line[0]))
 
+	annotationFile.close()
+	print("done")
 
 
 
@@ -97,4 +122,9 @@ if __name__ == '__main__':
 	#~30 seconds for every 5000 blast hits. Uncomment to run
 	# MapIDs() 
 
-	annotationSearch("Q75WF2")
+	# Uncomment to run
+	# annotateToxins() 
+
+	# Uncomment to run
+	# annotateTranscriptome() 
+
