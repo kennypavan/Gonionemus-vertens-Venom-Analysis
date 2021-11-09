@@ -1,4 +1,5 @@
 
+
 # Gonionemus vertens
 Venomics and transcriptome analysis pipeline and corresponding data. <br><br>
 
@@ -134,8 +135,87 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 12. Import nr db results to SQL database.
 
-13. Import toxin db results to SQL database.
+13. Create toxin db with the structure below, then import data using sql load file function directly from toxin flat files.
+	```
+	--
+	-- Table structure for table `annotation_results`
+	--
 
+	CREATE TABLE `annotation_results` (
+	  `id` int(12) NOT NULL,
+	  `qseqid` varchar(32) DEFAULT NULL,
+	  `symbol` varchar(16) DEFAULT NULL,
+	  `go_name` varchar(128) DEFAULT NULL,
+	  `go_id` varchar(32) DEFAULT NULL,
+	  `go_aspect` varchar(32) DEFAULT NULL,
+	  `taxon_name` varchar(64) DEFAULT NULL,
+	  `name` varchar(128) DEFAULT NULL,
+	  `assigned_by` varchar(16) DEFAULT NULL
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+	-- --------------------------------------------------------
+
+	--
+	-- Table structure for table `blast_results`
+	--
+
+	CREATE TABLE `blast_results` (
+	  `id` int(12) NOT NULL,
+	  `qseqid` varchar(32) DEFAULT NULL,
+	  `symbol` varchar(32) DEFAULT NULL,
+	  `sseqid` varchar(64) DEFAULT NULL,
+	  `pident` float DEFAULT NULL,
+	  `length` int(5) DEFAULT NULL,
+	  `mismatch` int(5) DEFAULT NULL,
+	  `gapopen` int(5) DEFAULT NULL,
+	  `qstart` int(5) DEFAULT NULL,
+	  `qend` int(5) DEFAULT NULL,
+	  `sstart` int(5) DEFAULT NULL,
+	  `send` int(5) DEFAULT NULL,
+	  `evalue` double DEFAULT NULL,
+	  `bitscore` int(5) DEFAULT NULL,
+	  `tpm` float DEFAULT NULL
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+	--
+	-- Indexes for table `annotation_results`
+	--
+	ALTER TABLE `annotation_results`
+	  ADD PRIMARY KEY (`id`),
+	  ADD KEY `qseqid` (`qseqid`),
+	  ADD KEY `symbol` (`symbol`),
+	  ADD KEY `go_name` (`go_name`),
+	  ADD KEY `go_aspect` (`go_aspect`),
+	  ADD KEY `name` (`name`);
+
+	--
+	-- Indexes for table `blast_results`
+	--
+	ALTER TABLE `blast_results`
+	  ADD PRIMARY KEY (`id`),
+	  ADD KEY `qseqid` (`qseqid`),
+	  ADD KEY `tpm` (`tpm`),
+	  ADD KEY `evalue` (`evalue`),
+	  ADD KEY `pident` (`pident`),
+	  ADD KEY `sseqid` (`sseqid`),
+	  ADD KEY `bitscore` (`bitscore`),
+	  ADD KEY `length` (`length`),
+	  ADD KEY `symbol` (`symbol`);
+	
+	```
+	
 14. Filter by expression, GO, eval, etc...
 
 15. Generate figures.
+
+
+
+## Results
+
+| Metric | Total | Query |
+|--|--|--|
+| Total BLAST Hits| 10896 | SELECT COUNT(qseqid) FROM `blast_results` |
+| Unique Transcripts| 1415 | SELECT DISTINCT(qseqid) FROM `blast_results` |
+| Transcripts TPM >= 1| 3836 | SELECT COUNT(qseqid) FROM `blast_results` WHERE TPM >= 1 |
+| Unique Transcripts TPM >= 1| 478 | SELECT COUNT(DISTINCT(qseqid)) FROM `blast_results` WHERE TPM >= 1 |
+| Venomix Toxin Groups| --- |  |
