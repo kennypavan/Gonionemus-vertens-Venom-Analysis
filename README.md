@@ -136,7 +136,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 12. Import nr db results to SQL database.
 
 13. Create toxin db with the structure below, then import data using sql load file function directly from toxin flat files.
-	```
+	```sql
 	--
 	-- Table structure for table `annotation_results`
 	--
@@ -203,19 +203,56 @@ The results of this analysis are reproducible by following the steps below. <br>
 	  ADD KEY `symbol` (`symbol`);
 	
 	```
-	
+
 14. Filter by expression, GO, eval, etc...
 
 15. Generate figures.
 
 
+<br>
 
-## Results
+<br>
+
+<br>
+
+
+## ToxProt Results
 
 | Metric | Total | Query |
 |--|--|--|
-| Total BLAST Hits| 10896 | SELECT COUNT(qseqid) FROM `blast_results` |
-| Unique Transcripts| 1415 | SELECT DISTINCT(qseqid) FROM `blast_results` |
-| Transcripts TPM >= 1| 3836 | SELECT COUNT(qseqid) FROM `blast_results` WHERE TPM >= 1 |
-| Unique Transcripts TPM >= 1| 478 | SELECT COUNT(DISTINCT(qseqid)) FROM `blast_results` WHERE TPM >= 1 |
+| Total BLAST Hits| 10896 | ```SELECT COUNT(qseqid) FROM blast_results``` |
+| Total BLAST Hits TPM >= 1| 3836 | ```SELECT COUNT(qseqid) FROM blast_results WHERE TPM >= 1``` |
+| IsoForm Transcripts| 1415 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results``` |
+| IsoForm Transcripts TPM >= 1| 478 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE TPM >= 1``` |
+| Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
+| Unique Transcripts TPM >= 1| 311 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE TPM >= 1``` |
 | Venomix Toxin Groups| --- |  |
+
+
+
+<br>
+
+<br>
+
+<br>
+
+## In Progress
+
+```sql
+
+#IsoForm Best by Evalue
+SELECT * from blast_results AS A WHERE A.tpm>=1 AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1)
+
+#IsoForm Best matches
+SELECT *, count(qseqid) as transcript_count from blast_results AS A WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1) AND A.tpm>=1 GROUP BY qseqid ORDER BY tpm DESC;
+
+
+#Best by Evalue
+SELECT * from blast_results AS A WHERE A.tpm>=1 AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1)
+
+#Best matches
+SELECT *, count(qseqid_unique) as transcript_count from blast_results AS A WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1) AND A.tpm>=1 GROUP BY qseqid_unique ORDER BY tpm DESC;
+
+
+```
+
