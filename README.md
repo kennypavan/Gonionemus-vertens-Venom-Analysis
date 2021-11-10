@@ -1,6 +1,7 @@
 
 
 
+
 # Gonionemus vertens Venom and Toxin Analysis
 Pipeline and corresponding data. <br><br>
 
@@ -17,9 +18,15 @@ Mi-Seq raw fq paired data can be downloaded from the following links. Two distin
 The results of this analysis are reproducible by following the steps below. <br><br>
 
 
-1. Install the project prerequisite dependencies Docker, Fastqc, R, MYSQL, and Python3. 
+1. Install the project prerequisite dependencies Docker, Fastqc, R, MYSQL, and Python3. *Depending on your OS, this process can vary. Please search the proper commands for your OS.*
+<br>
+
 
 2. Download raw data Mi-Seq data files from the links above.
+	```
+	wget http://gaynorlab.com/cq/gv/MV-ALL-R1.fastq.gz
+	wget http://gaynorlab.com/cq/gv/MV-ALL-R2.fastq.gz
+	```
 
 3. Perform FASTQC on both files.
 	```
@@ -208,13 +215,13 @@ The results of this analysis are reproducible by following the steps below. <br>
 	
 	```
 
-12. After importing the data and fully populating the database, run the following SQL commands. This will populate additional fields to make search more efficient later.
+11. After importing the data and fully populating the database, run the following SQL commands. This will populate additional fields to make search more efficient later.
 	```sql
 	UPDATE blast_results SET symbol = (SELECT REPLACE(SUBSTRING_INDEX(sseqid,"|",2),"sp|",""));
 	UPDATE blast_results SET qseqid_unique = (SELECT REPLACE(SUBSTRING_INDEX(qseqid,"_",2),"TRINITY_",""));
 	```
 
-13. Filter SQL results by tpm and eval to find best unique and isoform matches
+12. Filter SQL results by tpm and eval to find best unique and isoform matches
 	```sql
 	# IsoForm - Best match by eValue
 	SELECT * FROM blast_results AS A 
@@ -230,10 +237,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 	GROUP BY A.qseqid_unique ORDER BY tpm DESC
 	```
 
-<br>
-
-14. Create Web UI
-
 
 <br>
 
@@ -242,6 +245,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 <br>
 
 # Results
+The results of this analysis can also be view interactively through the web UI found at <a href="https://gaynorlab.com/gv/toxins" target="_blank">gaynorlab.com/gv/toxins</a>
 
 <br>
 
@@ -254,7 +258,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 | IsoForm Transcripts TPM >= 1| 478 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE tpm >= 1``` |
 | Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
 | Unique Transcripts TPM >= 1| 311 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
-| Venomix Toxin Groups| --- |  |
+| Venom Toxin Groups| --- |  |
 
 <br>
 
@@ -264,6 +268,12 @@ The results of this analysis are reproducible by following the steps below. <br>
 | Transcript | Candidate | Pfam | GO | 3D Protein | TPM
 |--|--|--|--|--|--|
 
+
+<br>
+
+<br>
+
+## Venom Toxin Groups
 
 <br>
 
