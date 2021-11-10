@@ -223,10 +223,11 @@ The results of this analysis are reproducible by following the steps below. <br>
 	GROUP BY qseqid ORDER BY tpm DESC;
 
 	# Unique - Best match by eValue
-	SELECT A.*, count(A.qseqid_unique) as transcript_count FROM blast_results AS A 
+	SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
+	FROM blast_results AS A 
 	WHERE A.tpm>=1
 	AND A.evalue <= (SELECT evalue FROM blast_results AS B WHERE A.qseqid_unique=B.qseqid_unique ORDER BY B.evalue DESC LIMIT 1) 
-	GROUP BY A.qseqid_unique ORDER BY tpm DESC;
+	GROUP BY A.qseqid_unique ORDER BY tpm DESC
 	```
 
 <br>
