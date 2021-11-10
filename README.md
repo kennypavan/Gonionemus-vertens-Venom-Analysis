@@ -1,5 +1,6 @@
 
 
+
 # Gonionemus vertens Venom and Toxin Analysis
 Pipeline and corresponding data. <br><br>
 
@@ -95,27 +96,32 @@ The results of this analysis are reproducible by following the steps below. <br>
 	> R
 	> data = read.table("all.gene.TPM.not_cross_norm.counts_by_min_TPM", header=T)
 	> plot(data, xlim=c(-100,0), ylim=c(0,100000), t='b')
-
 	```
 
 9. Perform BLASTx via Diamond against the Uniprot Toxin and Venom Database. 
 
 
 	9a. Download Venom and Toxin database 
-
-		```wget https://www.uniprot.org/uniprot/?query=taxonomy%3A%22Metazoa+[33208]%22+and+(keyword%3Atoxin+OR+annotation%3A(type%3A%22tissue+specificity%22+venom))+AND+reviewed%3Ayes toxins.fasta.gz```
+	```
+	wget https://www.uniprot.org/uniprot/?query=taxonomy%3A%22Metazoa+[33208]%22+and+(keyword%3Atoxin+OR+annotation%3A(type%3A%22tissue+specificity%22+venom))+AND+reviewed%3Ayes toxins.fasta.gz
+	```		
 
 	9b. Pull the Diamond Docker image
 
-		```docker pull buchfink/diamond```
+	```
+	docker pull buchfink/diamond
+	```
 		
 	9c. Import db index to Diamond 
-
-		```docker run --rm -v `pwd`:`pwd` buchfink/diamond makedb --in `pwd`/toxins.fasta.gz -d `pwd`/toxins```
+	```
+	docker run --rm -v `pwd`:`pwd` buchfink/diamond makedb --in `pwd`/toxins.fasta.gz -d `pwd`/toxins
+	```
 
 	9d. Run the Diamond process via docker
 
-		```docker run --rm -v `pwd`:`pwd` buchfink/diamond blastx -q `pwd`/Trinity.fasta -d `pwd`/toxins -o `pwd`/diamond-toxin-out.txt -c1 -b19  > output.txt &```
+	```
+	docker run --rm -v `pwd`:`pwd` buchfink/diamond blastx -q `pwd`/Trinity.fasta -d `pwd`/toxins -o `pwd`/diamond-toxin-out.txt -c1 -b19  > output.txt &
+	```
 
 
 	9e. Add TPM expression values to results file using MergeBlastTPM python script. (python3 MergeBlastTPM.py --help for options)
