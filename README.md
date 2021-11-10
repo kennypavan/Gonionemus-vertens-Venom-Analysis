@@ -19,7 +19,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 
 1. Install the project prerequisite dependencies Docker, Fastqc, R, MYSQL, and Python3. *Depending on your OS, this process can vary. Please search the proper commands for your OS.*
-<br>
 
 
 2. Download raw data Mi-Seq data files from the links above.
@@ -134,8 +133,8 @@ The results of this analysis are reproducible by following the steps below. <br>
 	9e. Add TPM expression values to results file using MergeBlastTPM python script. (python3 MergeBlastTPM.py --help for options)
 	```
 	python3 MergeBlastTPM.py \
-	-b Data/All/BLASTx_ToxinProt/diamond-toxin-out.txt \
-	-t Data/All/Matrix/all.isoform.TPM.not_cross_norm -o Data/All/BLASTx_ToxinProt/diamond-toxin-out-with-tpm.txt
+	-b Data/BLASTx_ToxinProt/diamond-toxin-out.txt \
+	-t Data/Matrix/all.isoform.TPM.not_cross_norm -o Data/All/BLASTx_ToxinProt/diamond-toxin-out-with-tpm.txt
 	```
 
 	9f. Generate annotation file for the BLASTx results
