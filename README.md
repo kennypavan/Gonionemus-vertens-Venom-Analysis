@@ -164,6 +164,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 	CREATE TABLE `blast_results` (
 	  `id` int(12) NOT NULL,
 	  `qseqid` varchar(32) DEFAULT NULL,
+	  `qseqid_unique` varchar(32) DEFAULT NULL,
 	  `symbol` varchar(32) DEFAULT NULL,
 	  `sseqid` varchar(64) DEFAULT NULL,
 	  `pident` float DEFAULT NULL,
@@ -196,6 +197,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 	ALTER TABLE `blast_results`
 	  ADD PRIMARY KEY (`id`),
 	  ADD KEY `qseqid` (`qseqid`),
+	  ADD KEY `qseqid_unique` (`qseqid_unique`),
 	  ADD KEY `tpm` (`tpm`),
 	  ADD KEY `evalue` (`evalue`),
 	  ADD KEY `pident` (`pident`),
@@ -206,9 +208,30 @@ The results of this analysis are reproducible by following the steps below. <br>
 	
 	```
 
-12. Filter by expression, GO, eval, etc...
+12. After importing the data and fully populating the database, run the following SQL commands. This will populate additional fields to make search more efficient later.
+	```sql
+	UPDATE blast_results SET symbol = (SELECT REPLACE(SUBSTRING_INDEX(sseqid,"|",2),"sp|",""));
+	UPDATE blast_results SET qseqid_unique = (SELECT REPLACE(SUBSTRING_INDEX(qseqid,"_",2),"TRINITY_",""));
+	```
 
-13. Create Web UI
+13. Filter SQL results by tpm and eval to find best unique and isoform matches
+	```sql
+	# IsoForm - Best match by eValue
+	SELECT * FROM blast_results AS A 
+	WHERE A.tpm>=1 
+	AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue ASC LIMIT 1) 
+	GROUP BY qseqid ORDER BY tpm DESC;
+
+	# Unique - Best match by eValue
+	SELECT A.*, count(A.qseqid_unique) as transcript_count FROM blast_results AS A 
+	WHERE A.tpm>=1
+	AND A.evalue <= (SELECT evalue FROM blast_results AS B WHERE A.qseqid_unique=B.qseqid_unique ORDER BY B.evalue DESC LIMIT 1) 
+	GROUP BY A.qseqid_unique ORDER BY tpm DESC;
+	```
+
+<br>
+
+14. Create Web UI
 
 
 <br>
@@ -217,50 +240,33 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 <br>
 
+# Results
 
-## ToxProt Results
+<br>
 
+## Counts 
 | Metric | Total | Query |
 |--|--|--|
 | Total BLAST Hits| 10896 | ```SELECT COUNT(qseqid) FROM blast_results``` |
-| Total BLAST Hits TPM >= 1| 3836 | ```SELECT COUNT(qseqid) FROM blast_results WHERE TPM >= 1``` |
+| Total BLAST Hits TPM >= 1| 3836 | ```SELECT COUNT(qseqid) FROM blast_results WHERE tpm >= 1``` |
 | IsoForm Transcripts| 1415 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results``` |
-| IsoForm Transcripts TPM >= 1| 478 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE TPM >= 1``` |
+| IsoForm Transcripts TPM >= 1| 478 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE tpm >= 1``` |
 | Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
-| Unique Transcripts TPM >= 1| 311 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE TPM >= 1``` |
+| Unique Transcripts TPM >= 1| 311 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
 | Venomix Toxin Groups| --- |  |
 
+<br>
+
+<br>
+
+## Top 25 Highly Expressed Unique Venom/Toxin Candidates
+| Transcript | Candidate | Pfam | GO | 3D Protein | TPM
+|--|--|--|--|--|--|
+
+
+## Figures
 
 
 <br>
 
 <br>
-
-<br>
-
-## In Progress
-
-```sql
-
-#IsoForm Best by Evalue
-SELECT * from blast_results AS A WHERE A.tpm>=1 
-AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1)
-
-#IsoForm Best matches
-SELECT *, count(qseqid) as transcript_count from blast_results AS A 
-WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1) 
-AND A.tpm>=1 GROUP BY qseqid ORDER BY tpm DESC;
-
-
-#Best by Evalue
-SELECT * from blast_results AS A WHERE A.tpm>=1 
-AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1)
-
-#Best matches
-SELECT *, count(qseqid_unique) as transcript_count FROM blast_results AS A 
-WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1) 
-AND A.tpm>=1 GROUP BY qseqid_unique ORDER BY tpm DESC;
-
-
-```
-
