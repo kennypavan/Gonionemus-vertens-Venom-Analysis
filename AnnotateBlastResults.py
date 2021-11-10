@@ -108,9 +108,10 @@ def annotateTranscriptome():
 	
 	annotationFile = open("Data/All/BLASTx_NR/NR-annotations.txt", "a")  # append mode
 
-	#only annotate with TPM >=1
+	#only annotate with TPM >=1. Due to large filesize, only request results decent coverage.
 	for line in lines:
-		annotationFile.write(annotationSearch(line[1].split('|')[1],line[0]))
+		if line[12] >= 1:
+			annotationFile.write(annotationSearch(line[1].split('|')[1],line[0]))
 
 	annotationFile.close()
 	print("done")

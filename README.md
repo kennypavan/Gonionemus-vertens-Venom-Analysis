@@ -241,17 +241,23 @@ The results of this analysis are reproducible by following the steps below. <br>
 ```sql
 
 #IsoForm Best by Evalue
-SELECT * from blast_results AS A WHERE A.tpm>=1 AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1)
+SELECT * from blast_results AS A WHERE A.tpm>=1 
+AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1)
 
 #IsoForm Best matches
-SELECT *, count(qseqid) as transcript_count from blast_results AS A WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1) AND A.tpm>=1 GROUP BY qseqid ORDER BY tpm DESC;
+SELECT *, count(qseqid) as transcript_count from blast_results AS A 
+WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue DESC LIMIT 1) 
+AND A.tpm>=1 GROUP BY qseqid ORDER BY tpm DESC;
 
 
 #Best by Evalue
-SELECT * from blast_results AS A WHERE A.tpm>=1 AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1)
+SELECT * from blast_results AS A WHERE A.tpm>=1 
+AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1)
 
 #Best matches
-SELECT *, count(qseqid_unique) as transcript_count from blast_results AS A WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1) AND A.tpm>=1 GROUP BY qseqid_unique ORDER BY tpm DESC;
+SELECT *, count(qseqid_unique) as transcript_count FROM blast_results AS A 
+WHERE A.evalue = (SELECT evalue FROM blast_results WHERE qseqid_unique=A.qseqid_unique ORDER BY evalue DESC LIMIT 1) 
+AND A.tpm>=1 GROUP BY qseqid_unique ORDER BY tpm DESC;
 
 
 ```
