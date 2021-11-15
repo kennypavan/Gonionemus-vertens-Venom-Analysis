@@ -237,12 +237,36 @@ The results of this analysis are reproducible by following the steps below. <br>
 	GROUP BY A.qseqid_unique ORDER BY tpm DESC
 
 	# Unique - Best match by tpm
-	# Can possibly filter transcripts with lower evalue for ones with higher tpm
+	# Can possibly filter transcripts with lower evalue for ones with higher tpm, c
 	SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
 	FROM blast_results AS A 
 	WHERE A.tpm>=1
 	AND A.tpm >= (SELECT tpm FROM blast_results AS B WHERE A.qseqid_unique=B.qseqid_unique ORDER BY B.tpm DESC LIMIT 1) 
 	GROUP BY A.qseqid_unique ORDER BY tpm DESC
+
+	```
+
+
+13. Create database view called, 'unique_by_highest_tpm'
+	```sql
+	CREATE
+	 ALGORITHM = UNDEFINED
+	 VIEW `unique_by_highest_tpm`
+	 AS SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
+		FROM blast_results AS A 
+		WHERE A.tpm>=1
+		AND A.tpm >= (SELECT tpm FROM blast_results AS B WHERE A.qseqid_unique=B.qseqid_unique ORDER BY B.tpm DESC LIMIT 1) 
+		GROUP BY A.qseqid_unique ORDER BY tpm DESC
+	```
+
+
+14. Query the unique_by_highest_tpm view to get truly distinct transcript ToxProt matches for the transcriptome.
+
+	```sql
+	SELECT * FROM `unique_by_highest_tpm` AS A 
+	WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
+	GROUP BY symbol 
+	ORDER BY tpm DESC
 	```
 
 
