@@ -21,7 +21,7 @@ def annotationSearch(productID,transcriptID):
 	return fullResponse
 
 def annotateToxins():
-	file = open("Data/BLASTx_ToxinProt/diamond-toxin-out-with-tpm.txt",'r')
+	file = open("Data/BLASTx_ToxinProt/diamond-toxin-out-with-tpm-normalized.txt",'r')
 	lines = csv.reader(file, delimiter='\t')
 	annotationFile = open("Data/BLASTx_ToxinProt/toxin-annotations.txt", "a")  # append mode
 

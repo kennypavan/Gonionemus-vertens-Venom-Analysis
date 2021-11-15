@@ -134,7 +134,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 	```
 	python3 MergeBlastTPM.py \
 	-b Data/BLASTx_ToxinProt/diamond-toxin-out.txt \
-	-t Data/Matrix/all.isoform.TPM.not_cross_norm -o Data/All/BLASTx_ToxinProt/diamond-toxin-out-with-tpm.txt
+	-t Data/Matrix/all.isoform.counts.matrix -o Data/BLASTx_ToxinProt/diamond-toxin-out-with-tpm-normalized.txt
 	```
 
 	9f. Generate annotation file for the BLASTx results
@@ -223,16 +223,25 @@ The results of this analysis are reproducible by following the steps below. <br>
 12. Filter SQL results by tpm and eval to find best unique and isoform matches
 	```sql
 	# IsoForm - Best match by eValue
-	SELECT * FROM blast_results AS A 
+	SELECT *, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name FROM blast_results AS A 
 	WHERE A.tpm>=1 
 	AND A.evalue = (SELECT evalue FROM blast_results WHERE qseqid=A.qseqid ORDER BY evalue ASC LIMIT 1) 
 	GROUP BY qseqid ORDER BY tpm DESC;
 
 	# Unique - Best match by eValue
+	# Can possibly filter transcripts with higher TPM for ones with lower evalue.
 	SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
 	FROM blast_results AS A 
 	WHERE A.tpm>=1
 	AND A.evalue <= (SELECT evalue FROM blast_results AS B WHERE A.qseqid_unique=B.qseqid_unique ORDER BY B.evalue DESC LIMIT 1) 
+	GROUP BY A.qseqid_unique ORDER BY tpm DESC
+
+	# Unique - Best match by tpm
+	# Can possibly filter transcripts with lower evalue for ones with higher tpm
+	SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
+	FROM blast_results AS A 
+	WHERE A.tpm>=1
+	AND A.tpm >= (SELECT tpm FROM blast_results AS B WHERE A.qseqid_unique=B.qseqid_unique ORDER BY B.tpm DESC LIMIT 1) 
 	GROUP BY A.qseqid_unique ORDER BY tpm DESC
 	```
 
@@ -252,11 +261,11 @@ The results of this analysis can also be view interactively through the web UI f
 | Metric | Total | Query |
 |--|--|--|
 | Total BLAST Hits| 10896 | ```SELECT COUNT(qseqid) FROM blast_results``` |
-| Total BLAST Hits TPM >= 1| 3836 | ```SELECT COUNT(qseqid) FROM blast_results WHERE tpm >= 1``` |
+| Total BLAST Hits TPM >= 1| 4897 | ```SELECT COUNT(qseqid) FROM blast_results WHERE tpm >= 1``` |
 | IsoForm Transcripts| 1415 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results``` |
-| IsoForm Transcripts TPM >= 1| 478 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE tpm >= 1``` |
+| IsoForm Transcripts TPM >= 1| 616 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE tpm >= 1``` |
 | Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
-| Unique Transcripts TPM >= 1| 311 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
+| Unique Transcripts TPM >= 1| 367 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
 | Venom Toxin Groups| --- |  |
 
 <br>
