@@ -272,7 +272,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 	```sql
 	SELECT go_name, COUNT(*) as go_count FROM `annotation_results` WHERE 
-
 	symbol IN (
 
 		SELECT symbol FROM `unique_by_highest_tpm` AS A 
@@ -281,7 +280,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 		ORDER BY tpm DESC
 
 	)
-
 	AND qseqid IN (
 	    
 		SELECT qseqid FROM `unique_by_highest_tpm` AS A 
@@ -290,12 +288,8 @@ The results of this analysis are reproducible by following the steps below. <br>
 		ORDER BY tpm DESC
 
 	) 
-
 	GROUP BY go_name
-
 	ORDER BY go_count DESC 
-
-	LIMIT 200	
 	```
 
 
@@ -312,6 +306,32 @@ The results of this analysis can also be view interactively through the web UI f
 <br>
 
 ## Counts 
+
+| Metric | Value |
+|--|--|
+|Total trinity genes|154724|
+|Total trinity transcripts|235191|
+|Percent GC|41.79|
+
+<br>
+
+| ALL transcript contigs ||
+|--|--|
+|Median contig length|425|
+|Average contig|808.46|
+|Total assembled bases|190142601|
+
+<br>
+
+| Longest IsoForm ||
+|--|--|
+|Median contig length|341|
+|Average contig|599.25|
+|Total assembled bases|92718571|
+
+
+<br>
+
 | Metric | Total | Query |
 |--|--|--|
 | Total BLAST Hits| 10896 | ```SELECT COUNT(qseqid) FROM blast_results``` |
@@ -346,12 +366,5 @@ The results of this analysis can also be view interactively through the web UI f
 
 
 ![alt text](https://github.com/kennypavan/Gonionemus-vertens-Venom-Analysis/blob/main/Data/BLASTx_ToxinProt/go_chart.png?raw=true "GO")
-
-<br>
-
-## Figures
-
-
-<br>
 
 <br>
