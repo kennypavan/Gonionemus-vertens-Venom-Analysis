@@ -237,7 +237,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 	GROUP BY A.qseqid_unique ORDER BY tpm DESC
 
 	# Unique - Best match by tpm
-	# Can possibly filter transcripts with lower evalue for ones with higher tpm, c
 	SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
 	FROM blast_results AS A 
 	WHERE A.tpm>=1
@@ -275,25 +274,21 @@ The results of this analysis are reproducible by following the steps below. <br>
 	SELECT go_name, COUNT(*) as go_count FROM `annotation_results` WHERE 
 
 	symbol IN (
-	    
-	    
+
 		SELECT symbol FROM `unique_by_highest_tpm` AS A 
 		WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
 		GROUP BY symbol 
 		ORDER BY tpm DESC
-	    
-	    
+
 	)
 
 	AND qseqid IN (
-	    
 	    
 		SELECT qseqid FROM `unique_by_highest_tpm` AS A 
 		WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
 		GROUP BY symbol 
 		ORDER BY tpm DESC
-	    
-	    
+
 	) 
 
 	GROUP BY go_name
@@ -349,7 +344,6 @@ The results of this analysis can also be view interactively through the web UI f
 
 ## TOP 25 GO Values in Best Unique Venom/Toxin Matches
 
-<br>
 
 ![alt text](https://github.com/kennypavan/Gonionemus-vertens-Venom-Analysis/blob/main/Data/BLASTx_ToxinProt/go_chart.png?raw=true "GO")
 
