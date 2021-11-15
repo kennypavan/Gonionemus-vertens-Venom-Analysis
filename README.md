@@ -290,7 +290,7 @@ The results of this analysis can also be view interactively through the web UI f
 | IsoForm Transcripts TPM >= 1| 616 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE tpm >= 1``` |
 | Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
 | Unique Transcripts TPM >= 1| 367 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
-| Venom Toxin Groups| 147 | ```SELECT * FROM `unique_by_highest_tpm` AS A WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) GROUP BY symbol ORDER BY tpm DESC``` |
+| Venom Toxin Groups| 129 | ```SELECT DISTINCT (candidate_name) FROM `unique_by_highest_tpm``` |
 
 <br>
 
@@ -299,7 +299,6 @@ The results of this analysis can also be view interactively through the web UI f
 ## Top 25 Highly Expressed Unique Venom/Toxin Candidates
 | Transcript | Candidate | Pfam | GO | 3D Protein | TPM
 |--|--|--|--|--|--|
-
 
 <br>
 
