@@ -291,6 +291,7 @@ The results of this analysis can also be view interactively through the web UI f
 | Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
 | Unique Transcripts TPM >= 1| 367 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
 | Venom Toxin Groups| 129 | ```SELECT DISTINCT (candidate_name) FROM `unique_by_highest_tpm``` |
+| Unique GO Values| 126 | ```SELECT COUNT(go_name) FROM `unique_go_values``` |
 
 <br>
 
@@ -309,6 +310,14 @@ The results of this analysis can also be view interactively through the web UI f
 <br>
 
 <br>
+
+
+## GO in Top Venom/Toxin Candidates
+
+<br>
+![alt text](https://github.com/kennypavan/Gonionemus-vertens-Venom-Analysis/blob/main/image.jpg?raw=true)
+<br>
+
 
 ## Figures
 
