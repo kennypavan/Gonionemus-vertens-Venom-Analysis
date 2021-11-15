@@ -272,8 +272,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 15. Get all of the distinct GO names associated to the results in step 14, then obtain a total count of each.
 
 	```sql
-
-
 	SELECT go_name, COUNT(*) as go_count FROM `annotation_results` WHERE 
 
 	symbol IN (
@@ -302,9 +300,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 	ORDER BY go_count DESC 
 
-	LIMIT 200
-
-	
+	LIMIT 200	
 	```
 
 
@@ -351,7 +347,7 @@ The results of this analysis can also be view interactively through the web UI f
 <br>
 
 
-## GO in Top Venom/Toxin Candidates
+## TOP 25 GO Values in Best Unique Venom/Toxin Matches
 
 <br>
 
