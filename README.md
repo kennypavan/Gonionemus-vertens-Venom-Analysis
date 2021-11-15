@@ -269,6 +269,45 @@ The results of this analysis are reproducible by following the steps below. <br>
 	ORDER BY tpm DESC
 	```
 
+15. Get all of the distinct GO names associated to the results in step 14, then obtain a total count of each.
+
+	```sql
+
+
+	SELECT go_name, COUNT(*) as go_count FROM `annotation_results` WHERE 
+
+	symbol IN (
+	    
+	    
+		SELECT symbol FROM `unique_by_highest_tpm` AS A 
+		WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
+		GROUP BY symbol 
+		ORDER BY tpm DESC
+	    
+	    
+	)
+
+	AND qseqid IN (
+	    
+	    
+		SELECT qseqid FROM `unique_by_highest_tpm` AS A 
+		WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
+		GROUP BY symbol 
+		ORDER BY tpm DESC
+	    
+	    
+	) 
+
+	GROUP BY go_name
+
+	ORDER BY go_count DESC 
+
+	LIMIT 200
+
+	
+	```
+
+
 
 <br>
 
@@ -315,9 +354,10 @@ The results of this analysis can also be view interactively through the web UI f
 ## GO in Top Venom/Toxin Candidates
 
 <br>
-![alt text](https://github.com/kennypavan/Gonionemus-vertens-Venom-Analysis/blob/main/image.jpg?raw=true)
-<br>
 
+![alt text](https://github.com/kennypavan/Gonionemus-vertens-Venom-Analysis/blob/main/Data/BLASTx_ToxinProt/go_chart.png?raw=true "GO")
+
+<br>
 
 ## Figures
 
