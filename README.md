@@ -340,8 +340,8 @@ The results of this analysis can also be view interactively through the web UI f
 | IsoForm Transcripts TPM >= 1| 616 | ```SELECT COUNT(DISTINCT(qseqid)) FROM blast_results WHERE tpm >= 1``` |
 | Unique Transcripts| 493 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results``` |
 | Unique Transcripts TPM >= 1| 367 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
-| Venom Toxin Groups| 129 | ```SELECT DISTINCT (candidate_name) FROM `unique_by_highest_tpm``` |
-| Unique GO Values| 126 | ```SELECT COUNT(go_name) FROM `unique_go_values``` |
+| Venom Toxin Groups| 129 | ```SELECT DISTINCT(candidate_name) FROM unique_by_highest_tpm``` |
+| Unique GO Values| 126 | ```SELECT COUNT(go_name) FROM unique_go_values``` |
 
 <br>
 
