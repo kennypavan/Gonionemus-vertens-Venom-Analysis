@@ -258,40 +258,19 @@ The results of this analysis are reproducible by following the steps below. <br>
 		GROUP BY A.qseqid_unique ORDER BY tpm DESC
 	```
 
-
-14. Query the unique_by_highest_tpm view to get truly distinct transcript ToxProt matches for the transcriptome.
-
-	```sql
-	SELECT * FROM `unique_by_highest_tpm` AS A 
-	WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
-	GROUP BY symbol 
-	ORDER BY tpm DESC
-	```
-
-15. Get all of the distinct GO names associated to the results in step 14, then obtain a total count of each.
+14. Create a view called, 'unique_go_values' of all of the distinct GO names associated to the results in step 14, while obtaining a total count of each.
 
 	```sql
-	SELECT go_name, COUNT(*) as go_count FROM `annotation_results` WHERE 
-	symbol IN (
-
-		SELECT symbol FROM `unique_by_highest_tpm` AS A 
-		WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
-		GROUP BY symbol 
-		ORDER BY tpm DESC
-
-	)
-	AND qseqid IN (
-	    
-		SELECT qseqid FROM `unique_by_highest_tpm` AS A 
-		WHERE tpm >= (SELECT tpm FROM unique_by_highest_tpm AS B WHERE A.symbol=B.symbol ORDER BY B.tpm DESC LIMIT 1) 
-		GROUP BY symbol 
-		ORDER BY tpm DESC
-
-	) 
-	GROUP BY go_name
-	ORDER BY go_count DESC 
+	CREATE
+	 ALGORITHM = UNDEFINED
+	 VIEW `unique_go_values`
+	AS SELECT A.go_name,COUNT(*) AS go_count FROM annotation_results AS A
+	INNER JOIN unique_by_highest_tpm AS B
+	ON A.qseqid=B.qseqid
+	WHERE (A.symbol=B.symbol AND A.qseqid=B.qseqid AND duplicate=0)
+	GROUP BY A.go_name
+	ORDER BY go_count DESC
 	```
-
 
 <br>
 
