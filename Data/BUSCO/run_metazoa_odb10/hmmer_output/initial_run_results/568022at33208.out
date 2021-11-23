@@ -1,0 +1,17 @@
+#                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN25979_c0_g1_i2:52-716  -            184 568022at33208        -            152     7e-62  206.9   1.6   1   1   5.4e-65   1.2e-61  206.1   1.6     1   152     1   184     1   184 0.84 -
+TRINITY_DN25979_c0_g1_i3:52-603  -            184 568022at33208        -            152     7e-62  206.9   1.6   1   1   5.4e-65   1.2e-61  206.1   1.6     1   152     1   184     1   184 0.84 -
+TRINITY_DN69578_c0_g1_i1:11-553  -            181 568022at33208        -            152   2.4e-54  182.5   4.0   1   1   2.3e-57   5.3e-54  181.4   4.0     1   149     1   180     1   181 0.82 -
+TRINITY_DN158978_c0_g1_i1:11-277 -             89 568022at33208        -            152   6.4e-33  112.9   2.1   1   1   5.9e-36   1.4e-32  111.8   2.1    53   124     1    88     1    89 0.87 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/568022at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/568022at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/568022at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:10 2021
+# [ok]

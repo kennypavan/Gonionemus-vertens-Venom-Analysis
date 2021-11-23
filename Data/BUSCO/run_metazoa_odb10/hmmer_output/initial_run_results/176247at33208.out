@@ -1,0 +1,21 @@
+#                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN6339_c0_g1_i3:162-1739 -            526 176247at33208        -            337  4.7e-107  356.7   9.9   1   2  9.3e-107  2.1e-103  344.7   5.1    12   313    97   462    92   466 0.86 -
+TRINITY_DN6339_c0_g1_i3:162-1739 -            526 176247at33208        -            337  4.7e-107  356.7   9.9   2   2     3e-05      0.07   10.9   0.2   318   337   491   510   486   510 0.89 -
+TRINITY_DN6339_c0_g1_i1:162-1325 -            388 176247at33208        -            337   1.9e-98  328.4   9.5   1   2   1.6e-98   3.7e-95  317.6   4.7    56   313    24   324    21   327 0.88 -
+TRINITY_DN6339_c0_g1_i1:162-1325 -            388 176247at33208        -            337   1.9e-98  328.4   9.5   2   2   2.1e-05     0.049   11.5   0.2   318   337   353   372   348   372 0.89 -
+TRINITY_DN6339_c0_g1_i4:162-1325 -            388 176247at33208        -            337   1.9e-98  328.4   9.5   1   2   1.6e-98   3.7e-95  317.6   4.7    56   313    24   324    21   327 0.88 -
+TRINITY_DN6339_c0_g1_i4:162-1325 -            388 176247at33208        -            337   1.9e-98  328.4   9.5   2   2   2.1e-05     0.049   11.5   0.2   318   337   353   372   348   372 0.89 -
+TRINITY_DN6339_c0_g1_i7:162-1325 -            388 176247at33208        -            337   1.9e-98  328.4   9.7   1   2   1.7e-98   3.8e-95  317.5   4.9    56   313    24   324    21   327 0.88 -
+TRINITY_DN6339_c0_g1_i7:162-1325 -            388 176247at33208        -            337   1.9e-98  328.4   9.7   2   2   2.1e-05     0.049   11.5   0.2   318   337   353   372   348   372 0.89 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/176247at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/176247at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/176247at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:00:40 2021
+# [ok]

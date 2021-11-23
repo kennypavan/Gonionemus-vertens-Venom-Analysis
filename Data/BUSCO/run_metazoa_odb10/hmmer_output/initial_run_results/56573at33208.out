@@ -1,0 +1,27 @@
+#                                                                                          --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                      accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#              ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN837_c0_g1_i11:386-3655   -           1090 56573at33208         -            932         0 1305.2   9.7   1   1         0         0 1304.8   9.7     1   920     7  1047     7  1052 0.89 -
+TRINITY_DN837_c0_g1_i12:386-3655   -           1090 56573at33208         -            932         0 1305.2   9.7   1   1         0         0 1304.8   9.7     1   920     7  1047     7  1052 0.89 -
+TRINITY_DN837_c0_g1_i1:386-3655    -           1090 56573at33208         -            932         0 1305.2   9.7   1   1         0         0 1304.8   9.7     1   920     7  1047     7  1052 0.89 -
+TRINITY_DN837_c0_g1_i3:387-3656    -           1090 56573at33208         -            932         0 1305.2   9.7   1   1         0         0 1304.8   9.7     1   920     7  1047     7  1052 0.89 -
+TRINITY_DN837_c0_g1_i2:1-2217      -            739 56573at33208         -            932  3.5e-279  927.9   7.8   1   1  6.2e-282  4.1e-279  927.7   7.8     1   648     7   739     7   739 0.89 -
+TRINITY_DN837_c0_g1_i10:387-1556   -            390 56573at33208         -            932  6.6e-126  420.6   0.5   1   1  1.3e-128  8.4e-126  420.3   0.5   610   920     1   347     1   352 0.89 -
+TRINITY_DN31828_c0_g1_i1:446-3436  -            997 56573at33208         -            932   8.5e-42  142.3   3.0   1   1   6.2e-44   4.1e-41  140.0   3.0     4   881     2   997     1   997 0.71 -
+TRINITY_DN31828_c0_g1_i3:446-3436  -            997 56573at33208         -            932   8.5e-42  142.3   3.0   1   1   6.2e-44   4.1e-41  140.0   3.0     4   881     2   997     1   997 0.71 -
+TRINITY_DN31828_c0_g1_i2:511-3462  -            984 56573at33208         -            932   1.2e-38  131.8   5.8   1   1   9.7e-41   6.3e-38  129.4   5.8     4   855     2   966     1   972 0.70 -
+TRINITY_DN67117_c0_g1_i1:5-331     -            109 56573at33208         -            932   9.7e-24   82.5   0.0   1   1   1.7e-26   1.1e-23   82.3   0.0   802   894     1   108     1   109 0.85 -
+TRINITY_DN6274_c0_g1_i10:231-842   -            204 56573at33208         -            932   8.9e-08   29.7   0.1   1   1   1.5e-10   9.8e-08   29.5   0.1   282   395    52   170     5   197 0.75 -
+TRINITY_DN6274_c0_g1_i11:1029-1640 -            204 56573at33208         -            932   8.9e-08   29.7   0.1   1   1   1.5e-10   9.8e-08   29.5   0.1   282   395    52   170     5   197 0.75 -
+TRINITY_DN6274_c0_g1_i1:231-842    -            204 56573at33208         -            932   8.9e-08   29.7   0.1   1   1   1.5e-10   9.8e-08   29.5   0.1   282   395    52   170     5   197 0.75 -
+TRINITY_DN6274_c0_g1_i5:1029-1640  -            204 56573at33208         -            932   8.9e-08   29.7   0.1   1   1   1.5e-10   9.8e-08   29.5   0.1   282   395    52   170     5   197 0.75 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/56573at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/56573at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/56573at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:08 2021
+# [ok]

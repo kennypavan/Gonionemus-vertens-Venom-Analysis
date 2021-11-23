@@ -1,0 +1,18 @@
+# BUSCO version is: 5.2.1 
+# The lineage dataset is: metazoa_odb10 (Creation date: 2021-02-17, number of genomes: 65, number of BUSCOs: 954)
+# Summarized benchmarking in BUSCO notation for file /busco_wd/Trinity.fasta
+# BUSCO was run in mode: transcriptome
+
+	***** Results: *****
+
+	C:97.2%[S:28.2%,D:69.0%],F:0.9%,M:1.9%,n:954	   
+	927	Complete BUSCOs (C)			   
+	269	Complete and single-copy BUSCOs (S)	   
+	658	Complete and duplicated BUSCOs (D)	   
+	9	Fragmented BUSCOs (F)			   
+	18	Missing BUSCOs (M)			   
+	954	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 4.a0f584d

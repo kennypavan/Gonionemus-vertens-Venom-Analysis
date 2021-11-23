@@ -1,0 +1,26 @@
+#                                                                                       --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                   accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#           ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN3777_c0_g1_i2:141-986 -            282 590470at33208        -            208   4.9e-50  169.3   7.0   1   2   1.1e-12   1.2e-09   37.4   0.0     6    50    14    62     5    71 0.82 -
+TRINITY_DN3777_c0_g1_i2:141-986 -            282 590470at33208        -            208   4.9e-50  169.3   7.0   2   2   3.9e-41     4e-38  130.4   6.5    52   208   113   282   101   282 0.81 -
+TRINITY_DN3777_c0_g1_i4:141-986 -            282 590470at33208        -            208   5.5e-50  169.1   6.4   1   2   1.1e-12   1.2e-09   37.4   0.0     6    50    14    62     5    71 0.82 -
+TRINITY_DN3777_c0_g1_i4:141-986 -            282 590470at33208        -            208   5.5e-50  169.1   6.4   2   2   4.4e-41   4.5e-38  130.2   5.9    52   208   113   282   101   282 0.81 -
+TRINITY_DN3777_c0_g1_i5:141-986 -            282 590470at33208        -            208   5.5e-50  169.1   6.4   1   2   1.1e-12   1.2e-09   37.4   0.0     6    50    14    62     5    71 0.82 -
+TRINITY_DN3777_c0_g1_i5:141-986 -            282 590470at33208        -            208   5.5e-50  169.1   6.4   2   2   4.4e-41   4.5e-38  130.2   5.9    52   208   113   282   101   282 0.81 -
+TRINITY_DN3777_c0_g1_i1:3-848   -            282 590470at33208        -            208   6.4e-50  168.9   6.3   1   2   1.1e-12   1.2e-09   37.4   0.0     6    50    14    62     5    71 0.82 -
+TRINITY_DN3777_c0_g1_i1:3-848   -            282 590470at33208        -            208   6.4e-50  168.9   6.3   2   2   5.1e-41   5.2e-38  130.0   5.8    52   208   113   282   101   282 0.80 -
+TRINITY_DN906_c0_g1_i3:17-385   -            123 590470at33208        -            208    0.0048   15.8   0.5   1   1   1.2e-05     0.012   14.5   0.5    19   110     5   111     1   118 0.67 -
+TRINITY_DN906_c0_g1_i6:17-385   -            123 590470at33208        -            208    0.0048   15.8   0.5   1   1   1.2e-05     0.012   14.5   0.5    19   110     5   111     1   118 0.67 -
+TRINITY_DN906_c0_g1_i8:17-385   -            123 590470at33208        -            208    0.0048   15.8   0.5   1   1   1.2e-05     0.012   14.5   0.5    19   110     5   111     1   118 0.67 -
+TRINITY_DN5401_c0_g1_i1:37-285  -             83 590470at33208        -            208     0.045   12.6   0.0   1   1   6.5e-05     0.067   12.1   0.0    23    75    11    75     5    81 0.67 -
+TRINITY_DN5401_c0_g1_i3:37-285  -             83 590470at33208        -            208     0.045   12.6   0.0   1   1   6.5e-05     0.067   12.1   0.0    23    75    11    75     5    81 0.67 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/590470at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/590470at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/590470at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:18 2021
+# [ok]

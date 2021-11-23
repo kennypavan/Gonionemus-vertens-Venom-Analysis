@@ -1,0 +1,21 @@
+#                                                                                       --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                   accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#           ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN290_c0_g1_i1:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   1   4  7.9e-100   3.6e-96  321.7   5.1     1   176     9   188     9   200 0.93 -
+TRINITY_DN290_c0_g1_i1:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   2   4   1.6e-62   7.5e-59  198.0   4.1   152   264   213   338   203   344 0.92 -
+TRINITY_DN290_c0_g1_i1:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   3   4  6.3e-110  2.9e-106  355.2   6.8   256   456   362   595   342   598 0.91 -
+TRINITY_DN290_c0_g1_i1:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   4   4         0         0 3331.4  30.5   456  1958   661  2292   652  2292 0.97 -
+TRINITY_DN290_c0_g1_i3:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   1   4  7.9e-100   3.6e-96  321.7   5.1     1   176     9   188     9   200 0.93 -
+TRINITY_DN290_c0_g1_i3:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   2   4   1.6e-62   7.5e-59  198.0   4.1   152   264   213   338   203   344 0.92 -
+TRINITY_DN290_c0_g1_i3:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   3   4  6.3e-110  2.9e-106  355.2   6.8   256   456   362   595   342   598 0.91 -
+TRINITY_DN290_c0_g1_i3:127-7050 -           2308 5951at33208          -           1958         0 4189.3  70.3   4   4         0         0 3331.4  30.5   456  1958   661  2292   652  2292 0.97 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/5951at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/5951at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/5951at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:19 2021
+# [ok]

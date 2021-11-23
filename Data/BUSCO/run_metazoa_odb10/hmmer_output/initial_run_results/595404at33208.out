@@ -1,0 +1,17 @@
+#                                                                                      --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                  accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#          ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN3876_c0_g1_i1:89-535 -            149 595404at33208        -            126   3.6e-57  190.9   1.4   1   1   2.5e-60   5.7e-57  190.3   1.4     1   126     1   147     1   147 0.87 -
+TRINITY_DN3876_c0_g1_i2:89-535 -            149 595404at33208        -            126   3.6e-57  190.9   1.4   1   1   2.5e-60   5.7e-57  190.3   1.4     1   126     1   147     1   147 0.87 -
+TRINITY_DN3876_c0_g1_i3:89-535 -            149 595404at33208        -            126   3.6e-57  190.9   1.4   1   1   2.5e-60   5.7e-57  190.3   1.4     1   126     1   147     1   147 0.87 -
+TRINITY_DN97189_c0_g1_i1:2-199 -             66 595404at33208        -            126   4.4e-16   58.1   0.3   1   1   3.4e-19   7.8e-16   57.3   0.3     8    59     5    65     1    66 0.80 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/595404at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/595404at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/595404at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:19 2021
+# [ok]

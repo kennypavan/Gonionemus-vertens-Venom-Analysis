@@ -1,0 +1,15 @@
+#                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN34103_c0_g1_i1:49-1083 -            345 569303at33208        -            236   1.2e-80  269.5  20.3   1   2   5.1e-28   4.7e-24   84.3   5.0     1   128     2   163     2   181 0.77 -
+TRINITY_DN34103_c0_g1_i1:49-1083 -            345 569303at33208        -            236   1.2e-80  269.5  20.3   2   2   2.2e-59     2e-55  187.0   7.4   115   235   221   344   216   345 0.94 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/569303at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/569303at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/569303at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:10 2021
+# [ok]

@@ -1,0 +1,25 @@
+#                                                                                       --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                   accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#           ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN265_c0_g1_i6:455-2570 -            679 270594at33208        -            533  4.1e-211  701.3  43.3   1   4  4.2e-197  1.3e-193  643.6  11.2     1   432     4   471     4   485 0.90 -
+TRINITY_DN265_c0_g1_i6:455-2570 -            679 270594at33208        -            533  4.1e-211  701.3  43.3   2   4      0.11   3.2e+02   -1.2   0.1   420   443   502   525   500   533 0.75 -
+TRINITY_DN265_c0_g1_i6:455-2570 -            679 270594at33208        -            533  4.1e-211  701.3  43.3   3   4   1.6e-06     0.005   14.7   1.6   420   458   524   563   513   572 0.77 -
+TRINITY_DN265_c0_g1_i6:455-2570 -            679 270594at33208        -            533  4.1e-211  701.3  43.3   4   4   5.6e-19   1.7e-15   55.8  13.5   458   533   589   678   578   678 0.83 -
+TRINITY_DN265_c0_g1_i4:443-2569 -            709 270594at33208        -            533  3.6e-208  691.7  50.5   1   4  1.6e-192  4.8e-189  628.5  18.8     1   432     4   497     4   510 0.88 -
+TRINITY_DN265_c0_g1_i4:443-2569 -            709 270594at33208        -            533  3.6e-208  691.7  50.5   2   4     0.058   1.8e+02   -0.4   0.2   420   451   528   559   526   562 0.79 -
+TRINITY_DN265_c0_g1_i4:443-2569 -            709 270594at33208        -            533  3.6e-208  691.7  50.5   3   4   2.4e-06    0.0073   14.1   2.0   420   458   550   589   536   595 0.77 -
+TRINITY_DN265_c0_g1_i4:443-2569 -            709 270594at33208        -            533  3.6e-208  691.7  50.5   4   4   5.5e-19   1.7e-15   55.8  13.4   458   533   615   704   603   704 0.83 -
+TRINITY_DN265_c0_g1_i8:442-1791 -            450 270594at33208        -            533  8.9e-119  396.6  30.9   1   4    1e-103  3.1e-100  335.5   0.4   214   431     4   237     1   253 0.88 -
+TRINITY_DN265_c0_g1_i8:442-1791 -            450 270594at33208        -            533  8.9e-119  396.6  30.9   2   4     0.043   1.3e+02    0.1   0.3   419   449   268   298   266   302 0.77 -
+TRINITY_DN265_c0_g1_i8:442-1791 -            450 270594at33208        -            533  8.9e-119  396.6  30.9   3   4   8.4e-07    0.0026   15.6   1.4   420   458   291   330   281   341 0.77 -
+TRINITY_DN265_c0_g1_i8:442-1791 -            450 270594at33208        -            533  8.9e-119  396.6  30.9   4   4   3.1e-19   9.5e-16   56.6  13.6   458   533   356   445   343   445 0.83 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/270594at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/270594at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/270594at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:01:32 2021
+# [ok]

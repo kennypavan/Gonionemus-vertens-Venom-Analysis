@@ -1,0 +1,21 @@
+#                                                                                       --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                   accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#           ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN19919_c0_g1_i4:7-3483 -           1159 99614at33208         -            957         0 1391.2  23.5   1   2         0         0 1276.8  24.3     3   806     1   889     1   908 0.91 -
+TRINITY_DN19919_c0_g1_i4:7-3483 -           1159 99614at33208         -            957         0 1391.2  23.5   2   2   2.6e-34     6e-31  106.0   0.0   790   942   923  1101   896  1110 0.76 -
+TRINITY_DN19919_c0_g1_i3:7-3483 -           1159 99614at33208         -            957         0 1388.8  24.5   1   2         0         0 1274.4  25.3     3   806     1   889     1   908 0.91 -
+TRINITY_DN19919_c0_g1_i3:7-3483 -           1159 99614at33208         -            957         0 1388.8  24.5   2   2   2.6e-34     6e-31  106.0   0.0   790   942   923  1101   896  1110 0.76 -
+TRINITY_DN19919_c0_g1_i5:7-3483 -           1159 99614at33208         -            957         0 1388.8  24.5   1   2         0         0 1274.4  25.3     3   806     1   889     1   908 0.91 -
+TRINITY_DN19919_c0_g1_i5:7-3483 -           1159 99614at33208         -            957         0 1388.8  24.5   2   2   2.6e-34     6e-31  106.0   0.0   790   942   923  1101   896  1110 0.76 -
+TRINITY_DN19919_c0_g1_i2:7-3318 -           1104 99614at33208         -            957         0 1388.6  24.6   1   2         0         0 1274.4  25.6     3   807     1   890     1   912 0.91 -
+TRINITY_DN19919_c0_g1_i2:7-3318 -           1104 99614at33208         -            957         0 1388.6  24.6   2   2     3e-34   6.9e-31  105.8   0.0   790   940   923  1099   893  1104 0.76 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/99614at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/99614at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/99614at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:33 2021
+# [ok]

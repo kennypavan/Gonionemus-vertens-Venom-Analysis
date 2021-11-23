@@ -1,0 +1,17 @@
+#                                                                                          --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                      accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#              ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN62067_c0_g1_i5:1808-2824 -            339 518288at33208        -            273  3.9e-126  418.8   0.5   1   2  1.2e-118  3.7e-115  382.8   0.5     1   241     3   265     3   276 0.92 -
+TRINITY_DN62067_c0_g1_i5:1808-2824 -            339 518288at33208        -            273  3.9e-126  418.8   0.5   2   2   2.3e-12   7.1e-09   34.2   0.0   232   273   296   337   274   337 0.81 -
+TRINITY_DN62067_c0_g1_i4:116-1021  -            302 518288at33208        -            273  1.6e-115  384.0   0.4   1   1  6.3e-119  1.9e-115  383.7   0.4     1   242     3   266     3   289 0.92 -
+TRINITY_DN13878_c0_g1_i1:632-1270  -            213 518288at33208        -            273     0.069   11.3   0.0   1   1   3.3e-05       0.1   10.7   0.0   101   140    46    86    39    97 0.81 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/518288at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/518288at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/518288at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:03:54 2021
+# [ok]

@@ -1,0 +1,29 @@
+#                                                                                         --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                     accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#             ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN4119_c0_g1_i6:1500-2654 -            385 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g1_i6:1500-2654 -            385 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.5e-20   9.8e-17   60.0  24.7     2    86   201   304   200   311 0.77 -
+TRINITY_DN4119_c0_g2_i1:132-1286  -            385 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g2_i1:132-1286  -            385 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.5e-20   9.8e-17   60.0  24.7     2    86   201   304   200   311 0.77 -
+TRINITY_DN4119_c0_g1_i3:1500-2654 -            385 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g1_i3:1500-2654 -            385 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.5e-20   9.8e-17   60.0  24.7     2    86   201   304   200   311 0.77 -
+TRINITY_DN4119_c0_g2_i2:132-1286  -            385 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g2_i2:132-1286  -            385 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.5e-20   9.8e-17   60.0  24.7     2    86   201   304   200   311 0.77 -
+TRINITY_DN4119_c0_g2_i3:132-1286  -            385 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g2_i3:132-1286  -            385 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.5e-20   9.8e-17   60.0  24.7     2    86   201   304   200   311 0.77 -
+TRINITY_DN4119_c0_g1_i12:525-1682 -            386 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g1_i12:525-1682 -            386 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.6e-20   9.9e-17   60.0  24.7     2    86   202   305   201   312 0.77 -
+TRINITY_DN4119_c0_g1_i2:1500-2657 -            386 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g1_i2:1500-2657 -            386 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.6e-20   9.9e-17   60.0  24.7     2    86   202   305   201   312 0.77 -
+TRINITY_DN4119_c0_g1_i5:535-1692  -            386 464243at33208        -             93     5e-17   60.9  39.5   1   2       4.1   4.7e+03   -3.1   6.8    43    70     7    30     1    39 0.37 -
+TRINITY_DN4119_c0_g1_i5:535-1692  -            386 464243at33208        -             93     5e-17   60.9  39.5   2   2   8.6e-20   9.9e-17   60.0  24.7     2    86   202   305   201   312 0.77 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/464243at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/464243at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/464243at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:03:30 2021
+# [ok]

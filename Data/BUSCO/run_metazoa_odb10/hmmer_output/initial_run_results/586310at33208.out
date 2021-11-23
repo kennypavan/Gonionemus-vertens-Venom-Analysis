@@ -1,0 +1,17 @@
+#                                                                                       --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                   accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#           ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN6182_c0_g1_i2:345-935 -            197 586310at33208        -            145   9.1e-42  141.2   6.8   1   2   3.7e-23   1.7e-19   69.0   1.4     2    72    12    88    11    91 0.89 -
+TRINITY_DN6182_c0_g1_i2:345-935 -            197 586310at33208        -            145   9.1e-42  141.2   6.8   2   2   4.9e-24   2.3e-20   71.8   0.3    72   145   109   196   102   196 0.88 -
+TRINITY_DN6182_c0_g1_i3:345-935 -            197 586310at33208        -            145   9.1e-42  141.2   6.8   1   2   3.7e-23   1.7e-19   69.0   1.4     2    72    12    88    11    91 0.89 -
+TRINITY_DN6182_c0_g1_i3:345-935 -            197 586310at33208        -            145   9.1e-42  141.2   6.8   2   2   4.9e-24   2.3e-20   71.8   0.3    72   145   109   196   102   196 0.88 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/586310at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/586310at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/586310at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:04:17 2021
+# [ok]

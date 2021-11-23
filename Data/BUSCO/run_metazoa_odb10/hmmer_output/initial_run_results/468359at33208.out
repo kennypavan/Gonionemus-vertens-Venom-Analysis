@@ -1,0 +1,27 @@
+#                                                                                          --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                      accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#              ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN2328_c0_g1_i10:819-2138  -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i10:819-2138  -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+TRINITY_DN2328_c0_g1_i11:1416-2735 -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i11:1416-2735 -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+TRINITY_DN2328_c0_g1_i13:1115-2434 -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i13:1115-2434 -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+TRINITY_DN2328_c0_g1_i14:819-2138  -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i14:819-2138  -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+TRINITY_DN2328_c0_g1_i15:1090-2409 -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i15:1090-2409 -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+TRINITY_DN2328_c0_g1_i1:611-1930   -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i1:611-1930   -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+TRINITY_DN2328_c0_g1_i5:1290-2609  -            440 468359at33208        -            333  1.9e-127  424.2   9.5   1   2   8.4e-21   1.1e-17   63.3   0.1     2   121     3   169     2   175 0.81 -
+TRINITY_DN2328_c0_g1_i5:1290-2609  -            440 468359at33208        -            333  1.9e-127  424.2   9.5   2   2  2.1e-111  2.8e-108  361.2   6.4   128   333   209   431   181   431 0.92 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/468359at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/468359at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/468359at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:03:32 2021
+# [ok]

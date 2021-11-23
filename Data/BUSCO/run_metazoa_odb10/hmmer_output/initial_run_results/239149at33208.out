@@ -1,0 +1,19 @@
+#                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN3273_c0_g1_i1:54-1187  -            378 239149at33208        -            268   8.1e-17   60.4   1.0   1   2     0.099     3e+02   -0.5   0.1    40    59    74    93    64   121 0.79 -
+TRINITY_DN3273_c0_g1_i1:54-1187  -            378 239149at33208        -            268   8.1e-17   60.4   1.0   2   2   1.1e-19   3.3e-16   58.4   0.1   166   248   263   349   247   377 0.77 -
+TRINITY_DN3228_c0_g1_i1:504-1499 -            332 239149at33208        -            268   4.2e-15   54.8   0.3   1   2       0.7   2.2e+03   -3.3   0.0    86   101   104   119    76   136 0.47 -
+TRINITY_DN3228_c0_g1_i1:504-1499 -            332 239149at33208        -            268   4.2e-15   54.8   0.3   2   2   4.4e-18   1.3e-14   53.1   0.0   169   246   217   298   210   308 0.90 -
+TRINITY_DN3228_c0_g1_i2:504-1499 -            332 239149at33208        -            268   4.4e-15   54.7   0.3   1   2       0.7   2.2e+03   -3.3   0.0    86   101   104   119    76   136 0.47 -
+TRINITY_DN3228_c0_g1_i2:504-1499 -            332 239149at33208        -            268   4.4e-15   54.7   0.3   2   2   4.5e-18   1.4e-14   53.1   0.0   169   246   217   298   210   308 0.90 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/239149at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/239149at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/239149at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:01:18 2021
+# [ok]

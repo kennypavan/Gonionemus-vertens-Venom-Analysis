@@ -64,7 +64,18 @@ The results of this analysis are reproducible by following the steps below. <br>
 	fastqc [trimmed-reads-filename.fasta.gz]
 	```
 
-6. Estimate Transcript Abundance.
+6. Perform a BUSCO analysis.
+
+	6a. Pull the BUSCO Docker image
+
+	```docker pull ezlabgva/busco:v5.2.2_cv1```
+	
+	6b. Run the process via Docker. The command and paths may be different depending on your directory structure.
+
+	```docker run -u $(id -u) -v $(pwd):/busco_wd/ -w /busco_wd/ ezlabgva/busco:v5.2.1_cv1 busco -i Trinity.fasta -o BUSCO -l metazoa_odb10 -m transcriptome```
+
+
+7. Estimate Transcript Abundance.
 	```
 	docker run -v `pwd`:`pwd` trinityrnaseq/trinityrnaseq /usr/local/bin/util/align_and_estimate_abundance.pl \
 	--transcripts `pwd`/Trinity.fasta \
@@ -79,7 +90,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 	--output_dir `pwd`/rsem_outdir
 	```
 
-7. Build Expression Matrix.
+8. Build Expression Matrix.
 	```
 	docker run -v `pwd`:`pwd` trinityrnaseq/trinityrnaseq /usr/local/bin/util/abundance_estimates_to_matrix.pl  \
 	--gene_trans_map `pwd`/Trinity.fasta.gene_trans_map  \
@@ -89,7 +100,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 	`pwd`/rsem_outdir/RSEM.isoforms.results
 	```
 
-8. Count the Numbers of Expressed Transcripts.
+9. Count the Numbers of Expressed Transcripts.
 	
 	8a. Create a counts file.
 	``` 
@@ -104,46 +115,46 @@ The results of this analysis are reproducible by following the steps below. <br>
 	> plot(data, xlim=c(-100,0), ylim=c(0,100000), t='b')
 	```
 
-9. Perform BLASTx via Diamond against the Uniprot Toxin and Venom Database. 
+10. Perform BLASTx via Diamond against the Uniprot Toxin and Venom Database. 
 
 
-	9a. Download Venom and Toxin database 
+	10a. Download Venom and Toxin database 
 	```
 	wget https://www.uniprot.org/uniprot/?query=taxonomy%3A%22Metazoa+[33208]%22+and+(keyword%3Atoxin+OR+annotation%3A(type%3A%22tissue+specificity%22+venom))+AND+reviewed%3Ayes toxins.fasta.gz
 	```		
 
-	9b. Pull the Diamond Docker image
+	10b. Pull the Diamond Docker image
 
 	```
 	docker pull buchfink/diamond
 	```
 		
-	9c. Import db index to Diamond 
+	10c. Import db index to Diamond 
 	```
 	docker run --rm -v `pwd`:`pwd` buchfink/diamond makedb --in `pwd`/toxins.fasta.gz -d `pwd`/toxins
 	```
 
-	9d. Run the Diamond process via docker
+	10d. Run the Diamond process via docker
 
 	```
 	docker run --rm -v `pwd`:`pwd` buchfink/diamond blastx -q `pwd`/Trinity.fasta -d `pwd`/toxins -o `pwd`/diamond-toxin-out.txt -c1 -b19  > output.txt &
 	```
 
 
-	9e. Add TPM expression values to results file using MergeBlastTPM python script. (python3 MergeBlastTPM.py --help for options)
+	10e. Add TPM expression values to results file using MergeBlastTPM python script. (python3 MergeBlastTPM.py --help for options)
 	```
 	python3 MergeBlastTPM.py \
 	-b Data/BLASTx_ToxinProt/diamond-toxin-out.txt \
 	-t Data/Matrix/all.isoform.counts.matrix -o Data/BLASTx_ToxinProt/diamond-toxin-out-with-tpm-normalized.txt
 	```
 
-	9f. Generate annotation file for the BLASTx results
+	10f. Generate annotation file for the BLASTx results
 	```
 	python3 AnnotateBlastResults.py
 	```
 
 
-10. Create toxin db with the structure below, then import data using sql load file function directly from toxin flat files.
+11. Create toxin db with the structure below, then import data using sql load file function directly from toxin flat files.
 	```sql
 	--
 	-- Table structure for table `annotation_results`
@@ -214,13 +225,13 @@ The results of this analysis are reproducible by following the steps below. <br>
 	
 	```
 
-11. After importing the data and fully populating the database, run the following SQL commands. This will populate additional fields to make search more efficient later.
+12. After importing the data and fully populating the database, run the following SQL commands. This will populate additional fields to make search more efficient later.
 	```sql
 	UPDATE blast_results SET symbol = (SELECT REPLACE(SUBSTRING_INDEX(sseqid,"|",2),"sp|",""));
 	UPDATE blast_results SET qseqid_unique = (SELECT REPLACE(SUBSTRING_INDEX(qseqid,"_",2),"TRINITY_",""));
 	```
 
-12. Filter SQL results by tpm and eval to find best unique and isoform matches
+13. Filter SQL results by tpm and eval to find best unique and isoform matches
 	```sql
 	# IsoForm - Best match by eValue
 	SELECT *, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name FROM blast_results AS A 
@@ -246,7 +257,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 	```
 
 
-13. Create database view called, 'unique_by_highest_tpm'
+14. Create database view called, 'unique_by_highest_tpm'
 	```sql
 	CREATE
 	 ALGORITHM = UNDEFINED
@@ -258,7 +269,7 @@ The results of this analysis are reproducible by following the steps below. <br>
 		GROUP BY A.qseqid_unique ORDER BY tpm DESC
 	```
 
-14. Create a view called, 'unique_go_values' of all of the distinct GO names associated to the results in step 14, while obtaining a total count of each.
+15. Create a view called, 'unique_go_values' of all of the distinct GO names associated to the results in step 14, while obtaining a total count of each.
 
 	```sql
 	CREATE
@@ -306,6 +317,18 @@ The results of this analysis can also be view interactively through the web UI f
 |Median contig length|341|
 |Average contig|599.25|
 |Total assembled bases|92718571|
+
+
+<br>
+
+| BUSCO Analysis ||
+|--|--|
+|Complete|97.2%|
+|Single|28.2%|
+|Duplicate|69.0|
+|Single|28.2%|
+|Fragmented|0.9%|
+|Missing|1.9%|
 
 
 <br>

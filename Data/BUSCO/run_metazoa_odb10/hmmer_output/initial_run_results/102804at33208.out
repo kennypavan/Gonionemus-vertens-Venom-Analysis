@@ -1,0 +1,23 @@
+#                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN19176_c0_g1_i1:95-3214 -           1040 102804at33208        -            860         0 1265.1  44.1   1   2         0         0 1254.3  28.3     2   852     6   961     5   969 0.89 -
+TRINITY_DN19176_c0_g1_i1:95-3214 -           1040 102804at33208        -            860         0 1265.1  44.1   2   2   4.9e-06    0.0064   13.3  18.6   815   860   949  1000   938  1000 0.66 -
+TRINITY_DN19176_c0_g1_i2:95-3214 -           1040 102804at33208        -            860         0 1265.1  44.1   1   2         0         0 1254.3  28.3     2   852     6   961     5   969 0.89 -
+TRINITY_DN19176_c0_g1_i2:95-3214 -           1040 102804at33208        -            860         0 1265.1  44.1   2   2   4.9e-06    0.0064   13.3  18.6   815   860   949  1000   938  1000 0.66 -
+TRINITY_DN19176_c0_g1_i3:3-2687  -            895 102804at33208        -            860         0 1134.9  40.4   1   2         0         0 1124.9  22.9   116   849    14   813     4   822 0.89 -
+TRINITY_DN19176_c0_g1_i3:3-2687  -            895 102804at33208        -            860         0 1134.9  40.4   2   2   8.7e-06     0.011   12.5  18.7   816   860   805   855   799   855 0.68 -
+TRINITY_DN21951_c0_g1_i1:0-275   -             92 102804at33208        -            860   8.6e-42  142.0   0.2   1   1   7.2e-45   9.4e-42  141.8   0.2   655   746     1    92     1    92 0.99 -
+TRINITY_DN2837_c0_g1_i3:913-3963 -           1017 102804at33208        -            860     0.012   12.4   0.1   1   1   1.3e-05     0.017   11.9   0.1    55   245   466   651   458   673 0.77 -
+TRINITY_DN2837_c0_g1_i1:912-4607 -           1232 102804at33208        -            860     0.016   12.0   0.1   1   1   1.8e-05     0.024   11.5   0.1    55   245   681   866   673   887 0.76 -
+TRINITY_DN2837_c0_g1_i2:912-4652 -           1247 102804at33208        -            860     0.016   12.0   0.1   1   1   1.8e-05     0.024   11.4   0.1    55   245   696   881   688   902 0.76 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/102804at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/102804at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/102804at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:00:03 2021
+# [ok]

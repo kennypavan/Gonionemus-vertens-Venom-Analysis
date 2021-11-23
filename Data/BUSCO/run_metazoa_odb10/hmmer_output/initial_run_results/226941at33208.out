@@ -1,0 +1,21 @@
+#                                                                                        --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                    accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#            ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+TRINITY_DN5579_c0_g1_i3:234-1712 -            493 226941at33208        -            400  5.3e-187  621.0  24.9   1   2  4.1e-186  9.5e-183  607.0  17.0     1   380    17   429    17   434 0.92 -
+TRINITY_DN5579_c0_g1_i3:234-1712 -            493 226941at33208        -            400  5.3e-187  621.0  24.9   2   2   1.8e-07   0.00041   18.8   1.0   374   396   451   473   448   475 0.92 -
+TRINITY_DN5579_c0_g1_i6:194-1672 -            493 226941at33208        -            400  5.3e-187  621.0  24.9   1   2  4.1e-186  9.5e-183  607.0  17.0     1   380    17   429    17   434 0.92 -
+TRINITY_DN5579_c0_g1_i6:194-1672 -            493 226941at33208        -            400  5.3e-187  621.0  24.9   2   2   1.8e-07   0.00041   18.8   1.0   374   396   451   473   448   475 0.92 -
+TRINITY_DN5579_c0_g1_i5:234-1706 -            491 226941at33208        -            400  4.2e-183  608.1  23.1   1   2    4e-182  9.2e-179  593.8  15.4     1   376    17   425    17   435 0.92 -
+TRINITY_DN5579_c0_g1_i5:234-1706 -            491 226941at33208        -            400  4.2e-183  608.1  23.1   2   2   1.4e-07   0.00031   19.1   0.8   374   396   449   471   430   473 0.92 -
+TRINITY_DN5579_c0_g1_i4:143-511  -            123 226941at33208        -            400   4.4e-29  101.0   5.9   1   2   9.6e-27   2.2e-23   82.2   0.3   320   376     1    57     1    68 0.97 -
+TRINITY_DN5579_c0_g1_i4:143-511  -            123 226941at33208        -            400   4.4e-29  101.0   5.9   2   2     2e-08   4.5e-05   21.9   0.9   374   396    81   103    62   105 0.92 -
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/226941at33208.hmm
+# Target file:     /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas
+# Option settings: hmmsearch --domtblout /busco_wd/BUSCO/run_metazoa_odb10/hmmer_output/initial_run_results/226941at33208.out --cpu 1 /busco_wd/busco_downloads/lineages/metazoa_odb10/hmms/226941at33208.hmm /busco_wd/BUSCO/run_metazoa_odb10/metaeuk_output/initial_results/Trinity.fasta.modified.fas 
+# Current dir:     /busco_wd
+# Date:            Tue Nov 23 09:01:12 2021
+# [ok]
