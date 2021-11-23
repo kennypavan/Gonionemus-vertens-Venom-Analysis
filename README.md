@@ -326,7 +326,6 @@ The results of this analysis can also be view interactively through the web UI f
 |Complete|97.2%|
 |Single|28.2%|
 |Duplicate|69.0|
-|Single|28.2%|
 |Fragmented|0.9%|
 |Missing|1.9%|
 
