@@ -1,9 +1,15 @@
 
-
-
-
 # Gonionemus vertens Venom and Toxin Analysis
-Pipeline and corresponding data. <br><br>
+Pipeline and corresponding data. <br>
+
+<br>
+
+# Results
+The results of this analysis can also be view interactively through the web UI found at <a href="https://gaynorlab.com/gv/toxins" target="_blank">gaynorlab.com/gv/toxins</a>. Publication in-progress.
+
+<br>
+
+<br>
 
 ## Raw Data
 Mi-Seq raw fq paired data can be downloaded from the following links. Two distinct Mi-Seq runs were performed on 5 individual GV samples resulting in 10 pairs of forward and reverse reads. The individual reads were then concatenated into holistic forward and reverse files which can be downloaded below.  
@@ -260,7 +266,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 14. Create database view called, 'unique_by_highest_tpm'
 	```sql
 	CREATE
-	 ALGORITHM = UNDEFINED
 	 VIEW `unique_by_highest_tpm`
 	 AS SELECT A.*, count(A.qseqid_unique) as transcript_count, (SELECT name FROM annotation_results WHERE symbol = A.symbol LIMIT 1) AS candidate_name 
 		FROM blast_results AS A 
@@ -273,7 +278,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 	```sql
 	CREATE
-	 ALGORITHM = UNDEFINED
 	 VIEW `unique_go_values`
 	AS SELECT A.go_name,COUNT(*) AS go_count FROM annotation_results AS A
 	INNER JOIN unique_by_highest_tpm AS B
@@ -290,7 +294,6 @@ The results of this analysis are reproducible by following the steps below. <br>
 <br>
 
 # Results
-The results of this analysis can also be view interactively through the web UI found at <a href="https://gaynorlab.com/gv/toxins" target="_blank">gaynorlab.com/gv/toxins</a>
 
 <br>
 
@@ -342,29 +345,5 @@ The results of this analysis can also be view interactively through the web UI f
 | Unique Transcripts TPM >= 1| 367 | ```SELECT COUNT(DISTINCT(qseqid_unique)) FROM blast_results WHERE tpm >= 1``` |
 | Venom Toxin Groups| 129 | ```SELECT DISTINCT(candidate_name) FROM unique_by_highest_tpm``` |
 | Unique GO Values| 126 | ```SELECT COUNT(go_name) FROM unique_go_values``` |
-
-<br>
-
-<br>
-
-## Top 25 Highly Expressed Unique Venom/Toxin Candidates
-| Transcript | Candidate | Pfam | GO | 3D Protein | TPM
-|--|--|--|--|--|--|
-
-<br>
-
-<br>
-
-## Venom Toxin Groups
-
-<br>
-
-<br>
-
-
-## TOP 25 GO Values in Best Unique Venom/Toxin Matches
-
-
-![alt text](https://github.com/kennypavan/Gonionemus-vertens-Venom-Analysis/blob/main/Data/BLASTx_ToxinProt/go_chart.png?raw=true "GO")
 
 <br>
