@@ -293,11 +293,9 @@ The results of this analysis are reproducible by following the steps below. <br>
 
 <br>
 
-# Results
+# Summary Results
 
 <br>
-
-## Counts 
 
 | Metric | Value |
 |--|--|
